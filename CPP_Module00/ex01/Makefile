@@ -6,7 +6,7 @@
 #    By: rrupp <rrupp@student.42vienna.com>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/19 12:02:21 by rrupp             #+#    #+#              #
-#    Updated: 2023/05/19 12:36:19 by rrupp            ###   ########.fr        #
+#    Updated: 2023/05/21 10:18:42 by rrupp            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ CC := c++
 
 OBJ_P := ./obj/
 
-SRC :=	megaphone.cpp
+SRC :=	PhoneBook.cpp
 
 OBJ := $(SRC:%.cpp=$(OBJ_P)%.o)
 
@@ -37,7 +37,7 @@ vpath %.cpp src
 
 $(NAME): $(OBJ)
 	$(CC) -o $(NAME) $(OBJ)
-	echo "Got the megaphone!"
+	echo "Got my awesome PhoneBook!"
 
 clean:
 	rm -f $(OBJ)
@@ -46,6 +46,6 @@ clean:
 
 fclean: clean
 	rm -f $(NAME)
-	echo "God thanks the megaphone is removed!"
+	echo "The PhoneBook is removed!"
 
 re: fclean all
