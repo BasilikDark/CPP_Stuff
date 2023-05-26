@@ -6,7 +6,7 @@
 /*   By: rrupp <rrupp@student.42vienna.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 15:28:00 by rrupp             #+#    #+#             */
-/*   Updated: 2023/05/21 17:41:03 by rrupp            ###   ########.fr       */
+/*   Updated: 2023/05/26 16:54:26 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define CLASS_CONTACT_HPP
 
 # include <iostream>
+# include <string>
+# include <iomanip>
 
 # ifndef FIRST_NAME
 #  define FIRST_NAME 0
@@ -34,19 +36,21 @@
 class	Contact
 {
 	public:
-		char	first_name[11];
 
 		Contact();
 		~Contact();
 
-		char	*get_cont(int check, char *tmp);
-		void	add_contact(void);
+		std::string	get_string(int check) const;
+		void		add_contact(void);
+		void		print_bookline(void) const;
 
 	private:
-	//	char	*_last_name;
-	//	char	*_nickname;
-	//	char	*_phone_number;
-	//	char	*_darkest_secret;
+		std::string	_first_name;
+		std::string	_last_name;
+		std::string	_nickname;
+		std::string	_phone_number;
+		std::string	_darkest_secret;
+		std::string _formatstr(const std::string &field) const;
 };
 
 #endif
