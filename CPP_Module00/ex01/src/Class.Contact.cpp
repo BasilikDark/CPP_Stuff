@@ -6,7 +6,7 @@
 /*   By: rrupp <rrupp@student.42vienna.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 15:55:41 by rrupp             #+#    #+#             */
-/*   Updated: 2023/05/26 16:59:48 by rrupp            ###   ########.fr       */
+/*   Updated: 2023/05/27 18:02:27 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,12 +73,9 @@ std::string Contact::_formatstr(const std::string &source) const
 
 void	Contact::print_bookline(void) const
 {
-	std::cout << std::setw(10);
-	std::cout << _formatstr(this->_first_name) << "|";
-	std::cout << std::setw(10);
-	std::cout << _formatstr(this->_last_name)<< "|";
-	std::cout << std::setw(10);
-	std::cout << _formatstr(this->_nickname) << "|";
-	std::cout << std::setw(10);
-	std::cout << _formatstr(this->_phone_number) << std::endl;
+	std::cout.setf(std::ios::left);
+	std::cout << std::setw(10) << _formatstr(this->_first_name) << "|";
+	std::cout << std::setw(10) << _formatstr(this->_last_name)<< "|";
+	std::cout << std::setw(10) << _formatstr(this->_nickname) << "|";
+	std::cout << std::setw(10) << _formatstr(this->_phone_number) << std::endl;
 }

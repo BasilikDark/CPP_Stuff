@@ -6,11 +6,11 @@
 #    By: rrupp <rrupp@student.42vienna.com>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/19 12:02:21 by rrupp             #+#    #+#              #
-#    Updated: 2023/05/21 10:18:42 by rrupp            ###   ########.fr        #
+#    Updated: 2023/05/27 17:32:04 by rrupp            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME := megaphone
+NAME := phonebook
 
 CFLAGS := -Wall -Werror -Wextra -std=c++98
 
@@ -18,7 +18,9 @@ CC := c++
 
 OBJ_P := ./obj/
 
-SRC :=	PhoneBook.cpp
+SRC :=	phonebook.cpp\
+		Class.Contact.cpp\
+		Class.PhoneBook.cpp
 
 OBJ := $(SRC:%.cpp=$(OBJ_P)%.o)
 
