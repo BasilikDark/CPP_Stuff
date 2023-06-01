@@ -6,11 +6,16 @@
 /*   By: rrupp <rrupp@student.42vienna.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 15:17:22 by rrupp             #+#    #+#             */
-/*   Updated: 2023/05/27 17:34:18 by rrupp            ###   ########.fr       */
+/*   Updated: 2023/06/01 15:08:50 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "phonebook.hpp"
+
+void	handleEOF(void)
+{
+	std::cout << "Ctrl + d (or EOF) detected. Please don`t!" << std::endl;
+}
 
 int	main(void)
 {
@@ -21,7 +26,12 @@ int	main(void)
 	{
 		std::cout << "Pls enter a command!" << std::endl;
 		std::getline(std::cin, cmd);
-		if (cmd == "ADD")
+		if (std::cin.eof())
+		{
+			handleEOF();
+			return (0);
+		}
+		else if (cmd == "ADD")
 			phonebook.AddToBook();
 		else if (cmd == "SEARCH")
 			phonebook.PrintBook();

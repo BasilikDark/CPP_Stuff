@@ -6,7 +6,7 @@
 /*   By: rrupp <rrupp@student.42vienna.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 15:28:00 by rrupp             #+#    #+#             */
-/*   Updated: 2023/05/27 17:42:36 by rrupp            ###   ########.fr       */
+/*   Updated: 2023/06/01 15:01:57 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ class	Contact
 		std::string	_nickname;
 		std::string	_phone_number;
 		std::string	_darkest_secret;
+		std::string	_buff;
 		std::string _formatstr(const std::string &field) const;
 };
 
