@@ -6,11 +6,11 @@
 #    By: rrupp <rrupp@student.42vienna.com>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/19 12:02:21 by rrupp             #+#    #+#              #
-#    Updated: 2023/05/19 12:36:19 by rrupp            ###   ########.fr        #
+#    Updated: 2023/06/02 14:37:55 by rrupp            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME := megaphone
+NAME := tests
 
 CFLAGS := -Wall -Werror -Wextra -std=c++98
 
@@ -18,7 +18,8 @@ CC := c++
 
 OBJ_P := ./obj/
 
-SRC :=	megaphone.cpp
+SRC :=	tests.cpp\
+		Class.Account.cpp
 
 OBJ := $(SRC:%.cpp=$(OBJ_P)%.o)
 
@@ -37,7 +38,7 @@ vpath %.cpp src
 
 $(NAME): $(OBJ)
 	$(CC) -o $(NAME) $(OBJ)
-	echo "Got the megaphone!"
+	echo "Preped the Test"
 
 clean:
 	rm -f $(OBJ)
@@ -46,6 +47,6 @@ clean:
 
 fclean: clean
 	rm -f $(NAME)
-	echo "God thanks the megaphone is removed!"
+	echo "Cleaned everything up!"
 
 re: fclean all
