@@ -6,7 +6,7 @@
 /*   By: rrupp <rrupp@student.42vienna.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 15:38:34 by rrupp             #+#    #+#             */
-/*   Updated: 2023/06/03 17:03:33 by rrupp            ###   ########.fr       */
+/*   Updated: 2023/06/03 20:50:18 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,11 @@
 class Zombie
 {
 	public:
-		Zombie(std::string name);
+		Zombie(void);
 		~Zombie(void);
 		
 		void	announce(void) const;
+		void	setName(std::string name);
 
 	private:
 		std::string	_name;	
