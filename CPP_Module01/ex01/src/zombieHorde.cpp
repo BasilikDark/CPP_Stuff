@@ -6,7 +6,7 @@
 /*   By: rrupp <rrupp@student.42vienna.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 17:01:43 by rrupp             #+#    #+#             */
-/*   Updated: 2023/06/03 17:54:30 by rrupp            ###   ########.fr       */
+/*   Updated: 2023/06/03 18:02:56 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,6 @@ Zombie	*zombieHorde(int N, std::sting name)
 {
 	Zombie	*zombieHorde;
 
-	zombieHorde = new N Zombie(name);
+	zombieHorde = new N;
 	return (zombieHorde);
 }
