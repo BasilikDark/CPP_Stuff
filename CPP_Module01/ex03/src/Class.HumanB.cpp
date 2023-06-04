@@ -1,28 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Class.Zombie.cpp                                   :+:      :+:    :+:   */
+/*   Class.HumanB.cpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rrupp <rrupp@student.42vienna.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/03 15:52:39 by rrupp             #+#    #+#             */
-/*   Updated: 2023/06/04 08:54:59 by rrupp            ###   ########.fr       */
+/*   Created: 2023/06/04 12:13:43 by rrupp             #+#    #+#             */
+/*   Updated: 2023/06/04 13:12:18 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "Zombie.hpp"
+# include "Class.HumanB.hpp"
 
-Zombie::Zombie(std::string name = "")
+HumanB::HumanB(std::string name) : _name(name)
 {
-	this->_name = name;
 }
 
-Zombie::~Zombie(void)
+HumanB::~HumanB()
 {
-	std::cout << this->_name << ": Got destroid!" << std::endl;
 }
 
-void	Zombie::announce(void) const
+void	HumanB::setWeapon(Weapon &type)
 {
-	std::cout << this->_name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+	this->_type = &type;
+}
+
+void	HumanB::attack(void) const
+{
+	if (this->_type == nullptr)
+		std::cout << this->_name << " attacks with their bare hands" << std::endl;
+	else
+		std::cout << this->_name << " attacks with their "
+		<< this->_type->getType() << std::endl;
 }

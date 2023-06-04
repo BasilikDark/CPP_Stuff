@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Class.Zombie.cpp                                   :+:      :+:    :+:   */
+/*   Class.HumanB.hpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rrupp <rrupp@student.42vienna.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/03 15:52:39 by rrupp             #+#    #+#             */
-/*   Updated: 2023/06/04 08:54:59 by rrupp            ###   ########.fr       */
+/*   Created: 2023/06/04 12:14:24 by rrupp             #+#    #+#             */
+/*   Updated: 2023/06/04 13:08:01 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "Zombie.hpp"
+#ifndef CLASS_HUMANB_CPP
+# define CLASS_HUMANB_CPP
 
-Zombie::Zombie(std::string name = "")
-{
-	this->_name = name;
-}
+# include "Class.Weapon.hpp"
+# include <iostream>
 
-Zombie::~Zombie(void)
+class HumanB
 {
-	std::cout << this->_name << ": Got destroid!" << std::endl;
-}
+	public:
+		HumanB(std::string name);
+		~HumanB();
+		void	setWeapon(Weapon &type);
+		void	attack(void) const;
 
-void	Zombie::announce(void) const
-{
-	std::cout << this->_name << ": BraiiiiiiinnnzzzZ..." << std::endl;
-}
+	private:
+		std::string	_name;
+		Weapon		*_type = nullptr;
+};
+
+#endif

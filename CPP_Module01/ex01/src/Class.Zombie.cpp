@@ -6,16 +6,14 @@
 /*   By: rrupp <rrupp@student.42vienna.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 15:52:39 by rrupp             #+#    #+#             */
-/*   Updated: 2023/06/03 20:51:19 by rrupp            ###   ########.fr       */
+/*   Updated: 2023/06/04 10:22:05 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "Zombie.hpp"
 
-Zombie::Zombie(void)
-{
-	this->_name = "empty";
-}
+Zombie::Zombie(std::string name) : _name(name)
+{}
 
 Zombie::~Zombie(void)
 {
