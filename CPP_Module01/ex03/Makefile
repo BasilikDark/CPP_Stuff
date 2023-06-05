@@ -6,13 +6,13 @@
 #    By: rrupp <rrupp@student.42vienna.com>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/19 12:02:21 by rrupp             #+#    #+#              #
-#    Updated: 2023/06/04 12:36:09 by rrupp            ###   ########.fr        #
+#    Updated: 2023/06/05 16:59:00 by rrupp            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME := TheWalkingDead
 
-CFLAGS := -Wall -Werror -Wextra
+CFLAGS := -Wall -Werror -Wextra -std=c++98
 
 CC := c++
 

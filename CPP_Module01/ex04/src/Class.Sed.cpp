@@ -6,7 +6,7 @@
 /*   By: rrupp <rrupp@student.42vienna.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 15:58:36 by rrupp             #+#    #+#             */
-/*   Updated: 2023/06/04 16:04:48 by rrupp            ###   ########.fr       */
+/*   Updated: 2023/06/05 17:44:17 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ int	Sed::replace(void)
 	std::string	temp;
 	if (this->_str1.length() == 0)
 		return (0);
-	std::ifstream input(this->_inFile);
-	std::ofstream output(this->_outfile, std::ofstream::trunc);
+	FILE	*input = fopen(_inFile, "r");
+	FILE	*output = fopen(_outfile, "w");
 	if (!input || !output)
 	{
 		std::cout << "Error: Faild to open the Input- or Output_file!" << std::endl;

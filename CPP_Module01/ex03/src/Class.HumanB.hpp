@@ -6,7 +6,7 @@
 /*   By: rrupp <rrupp@student.42vienna.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 12:14:24 by rrupp             #+#    #+#             */
-/*   Updated: 2023/06/04 13:08:01 by rrupp            ###   ########.fr       */
+/*   Updated: 2023/06/05 17:20:40 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class HumanB
 
 	private:
 		std::string	_name;
-		Weapon		*_type = nullptr;
+		Weapon		*_type;
 };
 
 #endif

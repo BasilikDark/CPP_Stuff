@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Class.Zombie.cpp                                   :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rrupp <rrupp@student.42vienna.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/03 15:52:39 by rrupp             #+#    #+#             */
-/*   Updated: 2023/06/05 16:54:30 by rrupp            ###   ########.fr       */
+/*   Created: 2023/06/05 10:33:30 by rrupp             #+#    #+#             */
+/*   Updated: 2023/06/05 14:28:48 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "Zombie.hpp"
+# include "Harl.hpp"
 
-Zombie::Zombie(std::string name)
+int	main(void)
 {
-	this->_name = name;
-}
+	std::string	lvls[] = {"debug", "info", "warning", "error"};
+	Harl		harl;
 
-Zombie::~Zombie(void)
-{
-	std::cout << this->_name << ": Got destroid!" << std::endl;
-}
-
-void	Zombie::announce(void) const
-{
-	std::cout << this->_name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+	for (int i = 0; i < 4; i++)
+		harl.complain(lvls[i]);
+	harl.complain(lvls[2]);
+	harl.complain(lvls[2]);
+	harl.complain(lvls[2]);
+	harl.complain(lvls[2]);
+	harl.complain(lvls[2]);
+	harl.complain("blub");
+	harl.complain("");
+	harl.complain(lvls[3]);
+	//harl.complain(NULL);
+	return (0);
 }

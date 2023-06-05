@@ -6,13 +6,13 @@
 #    By: rrupp <rrupp@student.42vienna.com>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/19 12:02:21 by rrupp             #+#    #+#              #
-#    Updated: 2023/06/03 20:58:07 by rrupp            ###   ########.fr        #
+#    Updated: 2023/06/05 11:24:17 by rrupp            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME := Zombies
 
-CFLAGS := -Wall -Werror -Wextra
+CFLAGS := -Wall -Werror -Wextra -std=c++98
 
 CC := c++
 
