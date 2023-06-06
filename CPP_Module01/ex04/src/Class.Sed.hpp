@@ -6,7 +6,7 @@
 /*   By: rrupp <rrupp@student.42vienna.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 14:30:17 by rrupp             #+#    #+#             */
-/*   Updated: 2023/06/05 17:40:55 by rrupp            ###   ########.fr       */
+/*   Updated: 2023/06/06 11:31:53 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ class Sed
 		std::string	_str1;
 		std::string	_str2;
 		std::string	_outfile;
+		void	helper_fillfile(FILE *input, FILE *output);
 };
 
 #endif

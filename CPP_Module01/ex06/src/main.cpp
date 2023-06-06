@@ -6,7 +6,7 @@
 /*   By: rrupp <rrupp@student.42vienna.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 10:33:30 by rrupp             #+#    #+#             */
-/*   Updated: 2023/06/05 16:22:39 by rrupp            ###   ########.fr       */
+/*   Updated: 2023/06/06 11:37:22 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	main(int argc, char *argv[])
 
 	if (argc != 2)
 	{
-		std::cout << "Please Enter DEBUG, INFO, WARNING or ERROR depending on how mutch Harl you can handle!" << std::endl;
+		std::cout << "Please Enter DEBUG, INFO, WARNING or ERROR or whatever he said this time!" << std::endl;
 		return (0);
 	}
 	std::string	comp[] = {"DEBUG", "INFO", "WARNING", "ERROR"};

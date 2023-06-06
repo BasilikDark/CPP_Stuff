@@ -6,7 +6,7 @@
 /*   By: rrupp <rrupp@student.42vienna.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 15:58:36 by rrupp             #+#    #+#             */
-/*   Updated: 2023/06/05 17:58:18 by rrupp            ###   ########.fr       */
+/*   Updated: 2023/06/06 11:32:36 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,30 +22,45 @@ Sed::~Sed()
 {
 }
 
-int	Sed::replace(void)
+void	Sed::helper_fillfile(FILE *input, FILE *output)
 {
 	std::string	temp;
+	size_t		pos = 0;
+	int			b_size = 1024;
+	char		buffer[b_size];
+
+	while (fgets(buffer, b_size, input))
+	{
+		temp += buffer;
+	}
+	while ((pos = temp.find(this->_str1)) != std::string::npos)
+	{
+		temp = temp.substr(0, pos) + this->_str2 + temp.substr(pos + this->_str1.length());
+		pos += this->_str2.length();
+	}
+	fputs(temp.c_str(), output);
+	
+	std::cout << "Finished writing to a differant file with alternated text!" << std::endl;
+}
+
+int	Sed::replace(void)
+{
 	if (this->_str1.length() == 0)
 		return (0);
 	FILE	*input = fopen(this->_inFile.c_str(), "r");
-	FILE	*output = fopen(this->_outfile.c_str(), "w");
-	if (!input || !output)
+	if (!input)
 	{
-		std::cout << "Error: Faild to open the Input- or Output_file!" << std::endl;
+		std::cout << "Error: Faild to open the Input_file!" << std::endl;
 		return (1);
 	}
-	while (std::getline(input, temp))
+	FILE	*output = fopen(this->_outfile.c_str(), "w");
+	if (!output)
 	{
-		size_t	pos = 0;
-		while ((pos = temp.find(this->_str1)) != std::string::npos)
-		{
-			temp = temp.substr(0, pos) + this->_str2 + temp.substr(pos + this->_str1.length());
-			pos += this->_str2.length();
-		}
-		output << temp << std::endl;
+		std::cout << "Error: Faild to open the Output_file!" << std::endl;
+		return (1);
 	}
+	helper_fillfile(input, output);
 	fclose(input);
 	fclose(output);
-	std::cout << "Finished writing to a differant file with alternated text!" << std::endl;
 	return (0);
 }
