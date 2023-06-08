@@ -6,11 +6,11 @@
 #    By: rrupp <rrupp@student.42vienna.com>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/19 12:02:21 by rrupp             #+#    #+#              #
-#    Updated: 2023/06/06 16:24:24 by rrupp            ###   ########.fr        #
+#    Updated: 2023/06/06 11:47:01 by rrupp            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME := sed
+NAME := #progam name
 
 CFLAGS := -Wall -Werror -Wextra -std=c++98
 
@@ -18,8 +18,7 @@ CC := c++
 
 OBJ_P := ./obj/
 
-SRC :=	main.cpp\
-		Class.Sed.cpp
+SRC :=	# programs with a \ until the one befor the last
 
 OBJ := $(SRC:%.cpp=$(OBJ_P)%.o)
 
@@ -38,7 +37,7 @@ vpath %.cpp src
 
 $(NAME): $(OBJ)
 	$(CC) -o $(NAME) $(OBJ)
-	echo "Preped custom 'sed'"
+	echo "build message!"
 
 clean:
 	rm -f $(OBJ)
@@ -47,6 +46,6 @@ clean:
 
 fclean: clean
 	rm -f $(NAME)
-	echo "deleted custom 'sed'"
+	echo "delete message!"
 
 re: fclean all
