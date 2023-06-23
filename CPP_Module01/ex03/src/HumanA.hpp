@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Class.HumanA.hpp                                   :+:      :+:    :+:   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rrupp <rrupp@student.42vienna.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 10:56:52 by rrupp             #+#    #+#             */
-/*   Updated: 2023/06/04 12:12:55 by rrupp            ###   ########.fr       */
+/*   Updated: 2023/06/23 14:31:24 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLASS_HUMANA_HPP
-# define CLASS_HUMANA_HPP
+#ifndef HUMANA_HPP
+# define HUMANA_HPP
 
-# include "Class.Weapon.hpp"
+# include "Weapon.hpp"
 # include <iostream>
 
 class HumanA

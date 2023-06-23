@@ -6,7 +6,7 @@
 #    By: rrupp <rrupp@student.42vienna.com>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/19 12:02:21 by rrupp             #+#    #+#              #
-#    Updated: 2023/05/27 17:32:04 by rrupp            ###   ########.fr        #
+#    Updated: 2023/06/23 13:16:17 by rrupp            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,8 +19,8 @@ CC := c++
 OBJ_P := ./obj/
 
 SRC :=	phonebook.cpp\
-		Class.Contact.cpp\
-		Class.PhoneBook.cpp
+		Contact.cpp\
+		PhoneBook.cpp
 
 OBJ := $(SRC:%.cpp=$(OBJ_P)%.o)
 

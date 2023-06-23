@@ -6,7 +6,7 @@
 #    By: rrupp <rrupp@student.42vienna.com>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/19 12:02:21 by rrupp             #+#    #+#              #
-#    Updated: 2023/06/05 11:25:37 by rrupp            ###   ########.fr        #
+#    Updated: 2023/06/23 14:25:18 by rrupp            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ CC := c++
 OBJ_P := ./obj/
 
 SRC :=	main.cpp\
-		Class.Zombie.cpp\
+		Zombie.cpp\
 		zombieHorde.cpp
 
 OBJ := $(SRC:%.cpp=$(OBJ_P)%.o)

@@ -1,33 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Class.Weapon.cpp                                   :+:      :+:    :+:   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rrupp <rrupp@student.42vienna.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/04 10:39:52 by rrupp             #+#    #+#             */
-/*   Updated: 2023/06/04 13:09:18 by rrupp            ###   ########.fr       */
+/*   Created: 2023/06/04 12:13:43 by rrupp             #+#    #+#             */
+/*   Updated: 2023/06/23 14:29:54 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "Class.Weapon.hpp"
+# include "HumanB.hpp"
 
-Weapon::Weapon(std::string type) : _type(type)
+HumanB::HumanB(std::string name) : _name(name)
 {
 }
 
-Weapon::~Weapon(void)
+HumanB::~HumanB()
 {
 }
 
-const std::string	&Weapon::getType(void) const
+void	HumanB::setWeapon(Weapon &type)
 {
-	const std::string &ref = this->_type;
-	return (ref);
+	this->_type = &type;
 }
 
-void	Weapon::setType(std::string type)
+void	HumanB::attack(void) const
 {
-	this->_type = type;
+	if (this->_type->getType().empty())
+		std::cout << this->_name << " attacks with their bare hands" << std::endl;
+	else
+		std::cout << this->_name << " attacks with their "
+		<< this->_type->getType() << std::endl;
 }
-

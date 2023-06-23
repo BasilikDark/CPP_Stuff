@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Class.Sed.cpp                                      :+:      :+:    :+:   */
+/*   Sed.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rrupp <rrupp@student.42vienna.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 15:58:36 by rrupp             #+#    #+#             */
-/*   Updated: 2023/06/06 11:32:36 by rrupp            ###   ########.fr       */
+/*   Updated: 2023/06/23 14:35:07 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "Class.Sed.hpp"
+# include "Sed.hpp"
 
 Sed::Sed(std::string inFile, std::string str1, std::string str2) : _inFile(inFile), _str1(str1), _str2(str2)
 {

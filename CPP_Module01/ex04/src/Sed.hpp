@@ -1,27 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Class.HumanA.cpp                                   :+:      :+:    :+:   */
+/*   Sed.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rrupp <rrupp@student.42vienna.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/04 12:07:45 by rrupp             #+#    #+#             */
-/*   Updated: 2023/06/04 12:40:17 by rrupp            ###   ########.fr       */
+/*   Created: 2023/06/04 14:30:17 by rrupp             #+#    #+#             */
+/*   Updated: 2023/06/23 14:34:47 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "Class.HumanA.hpp"
+#ifndef SED_HPP
+# define SED_HPP
 
-HumanA::HumanA(std::string name, Weapon &type) : _name(name), _type(type)
-{
-}
+# include <iostream>
+# include <cstdio>
+# include <cstring>
 
-HumanA::~HumanA()
+class Sed
 {
-}
+	public:
+		Sed(std::string inFile, std::string str1, std::string str2);
+		~Sed();
+		int	replace(void);
 
-void	HumanA::attack(void) const
-{
-	std::cout << this->_name << " attacks with their "
-	<< this->_type.getType() << std::endl;
-}
+	private:
+		std::string _inFile;
+		std::string	_str1;
+		std::string	_str2;
+		std::string	_outfile;
+		void	helper_fillfile(FILE *input, FILE *output);
+};
+
+#endif

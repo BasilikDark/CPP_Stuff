@@ -6,7 +6,7 @@
 #    By: rrupp <rrupp@student.42vienna.com>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/19 12:02:21 by rrupp             #+#    #+#              #
-#    Updated: 2023/06/03 10:54:22 by rrupp            ###   ########.fr        #
+#    Updated: 2023/06/23 13:24:19 by rrupp            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ CC := c++
 OBJ_P := ./obj/
 
 SRC :=	tests.cpp\
-		Class.Account.cpp
+		Account.cpp
 
 OBJ := $(SRC:%.cpp=$(OBJ_P)%.o)
 

@@ -6,13 +6,13 @@
 /*   By: rrupp <rrupp@student.42vienna.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 12:09:39 by rrupp             #+#    #+#             */
-/*   Updated: 2023/06/04 13:13:00 by rrupp            ###   ########.fr       */
+/*   Updated: 2023/06/23 14:30:18 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "Class.Weapon.hpp"
-# include "Class.HumanA.hpp"
-# include "Class.HumanB.hpp"
+# include "Weapon.hpp"
+# include "HumanA.hpp"
+# include "HumanB.hpp"
 
 int	main(void)
 {

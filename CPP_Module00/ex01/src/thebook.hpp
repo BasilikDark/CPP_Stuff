@@ -6,15 +6,14 @@
 /*   By: rrupp <rrupp@student.42vienna.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 12:20:41 by rrupp             #+#    #+#             */
-/*   Updated: 2023/05/27 11:46:49 by rrupp            ###   ########.fr       */
+/*   Updated: 2023/06/23 13:15:16 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#ifndef THEBOOK_HPP
+# define THEBOOK_HPP
 
 # include <iostream>
-# include "Class.PhoneBook.hpp"
-# include "Class.Contact.hpp"
+# include "PhoneBook.hpp"
 
 #endif

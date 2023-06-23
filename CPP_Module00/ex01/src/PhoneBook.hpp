@@ -1,21 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Class.Contact.hpp                                  :+:      :+:    :+:   */
+/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rrupp <rrupp@student.42vienna.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/21 15:28:00 by rrupp             #+#    #+#             */
-/*   Updated: 2023/06/01 15:01:57 by rrupp            ###   ########.fr       */
+/*   Created: 2023/05/21 15:25:25 by rrupp             #+#    #+#             */
+/*   Updated: 2023/06/23 13:50:12 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLASS_CONTACT_HPP
-# define CLASS_CONTACT_HPP
+#ifndef PHONEBOOK_HPP
+# define PHONEBOOK_HPP
 
 # include <iostream>
 # include <string>
 # include <iomanip>
+
+# include "Contact.hpp"
 
 # ifndef FIRST_NAME
 #  define FIRST_NAME 0
@@ -33,25 +35,25 @@
 #  define PHONE_NUMBER 3
 # endif
 
-class	Contact
+# ifndef SECRET
+#  define SECRET 4
+# endif
+
+class PhoneBook
 {
 	public:
+		PhoneBook();
+		~PhoneBook();
 
-		Contact();
-		~Contact();
-
-		std::string	get_string(int check) const;
-		void		add_contact(void);
-		void		print_bookline(void) const;
+		void	AddToBook(void);
+		void	PrintBook(void) const;
+		void	SearchBook(void) const;
 
 	private:
-		std::string	_first_name;
-		std::string	_last_name;
-		std::string	_nickname;
-		std::string	_phone_number;
-		std::string	_darkest_secret;
-		std::string	_buff;
-		std::string _formatstr(const std::string &field) const;
+		Contact	_contact[8];
+		int		_count;
+		int		_ft_check_input(std::string tmp) const;
+		void	_ft_print_info(int index) const;
 };
 
 #endif

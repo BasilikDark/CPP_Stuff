@@ -6,7 +6,7 @@
 #    By: rrupp <rrupp@student.42vienna.com>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/19 12:02:21 by rrupp             #+#    #+#              #
-#    Updated: 2023/06/06 16:24:24 by rrupp            ###   ########.fr        #
+#    Updated: 2023/06/23 14:35:28 by rrupp            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ CC := c++
 OBJ_P := ./obj/
 
 SRC :=	main.cpp\
-		Class.Sed.cpp
+		Sed.cpp
 
 OBJ := $(SRC:%.cpp=$(OBJ_P)%.o)
 

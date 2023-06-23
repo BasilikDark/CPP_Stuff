@@ -6,12 +6,12 @@
 /*   By: rrupp <rrupp@student.42vienna.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 14:17:46 by rrupp             #+#    #+#             */
-/*   Updated: 2023/06/04 16:02:33 by rrupp            ###   ########.fr       */
+/*   Updated: 2023/06/23 14:35:15 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include <iostream>
-# include "Class.Sed.hpp"
+# include "Sed.hpp"
 
 int	main(int argc, char *argv[])
 {

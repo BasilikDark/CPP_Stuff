@@ -6,7 +6,7 @@
 #    By: rrupp <rrupp@student.42vienna.com>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/19 12:02:21 by rrupp             #+#    #+#              #
-#    Updated: 2023/06/05 16:40:24 by rrupp            ###   ########.fr        #
+#    Updated: 2023/06/23 14:24:31 by rrupp            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ CC := c++
 OBJ_P := ./obj/
 
 SRC :=	main.cpp\
-		Class.Zombie.cpp\
+		Zombie.cpp\
 		randomChump.cpp\
 		newZombie.cpp
 

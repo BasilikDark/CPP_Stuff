@@ -6,11 +6,11 @@
 /*   By: rrupp <rrupp@student.42vienna.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 15:17:22 by rrupp             #+#    #+#             */
-/*   Updated: 2023/06/01 15:08:50 by rrupp            ###   ########.fr       */
+/*   Updated: 2023/06/23 13:16:34 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phonebook.hpp"
+#include "thebook.hpp"
 
 void	handleEOF(void)
 {
@@ -24,7 +24,8 @@ int	main(void)
 
 	while (1)
 	{
-		std::cout << "Pls enter a command!" << std::endl;
+		if (!std::cin.eof())
+			std::cout << "Pls enter a command!" << std::endl;
 		std::getline(std::cin, cmd);
 		if (std::cin.eof())
 		{
@@ -34,7 +35,10 @@ int	main(void)
 		else if (cmd == "ADD")
 			phonebook.AddToBook();
 		else if (cmd == "SEARCH")
+		{
 			phonebook.PrintBook();
+			phonebook.SearchBook();
+		}
 		else if (cmd == "EXIT")
 			return (0);
 		else
