@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Sed.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rrupp <rrupp@student.42vienna.com>         +#+  +:+       +#+        */
+/*   By: rrupp <rrupp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 14:30:17 by rrupp             #+#    #+#             */
-/*   Updated: 2023/06/23 14:34:47 by rrupp            ###   ########.fr       */
+/*   Updated: 2023/06/27 17:03:50 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 
 # include <iostream>
 # include <cstdio>
-# include <cstring>
+# include <fstream>
+# include <iosfwd>
 
 class Sed
 {
@@ -29,7 +30,7 @@ class Sed
 		std::string	_str1;
 		std::string	_str2;
 		std::string	_outfile;
-		void	helper_fillfile(FILE *input, FILE *output);
+		void	helper_fillfile(std::ifstream &input, std::ofstream &output);
 };
 
 #endif
