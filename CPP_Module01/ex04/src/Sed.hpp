@@ -6,7 +6,7 @@
 /*   By: rrupp <rrupp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 14:30:17 by rrupp             #+#    #+#             */
-/*   Updated: 2023/06/27 17:03:50 by rrupp            ###   ########.fr       */
+/*   Updated: 2023/06/28 09:19:40 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <iostream>
 # include <cstdio>
 # include <fstream>
-# include <iosfwd>
+# include <sstream>
 
 class Sed
 {

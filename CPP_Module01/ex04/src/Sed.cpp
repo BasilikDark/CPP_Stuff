@@ -6,7 +6,7 @@
 /*   By: rrupp <rrupp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 15:58:36 by rrupp             #+#    #+#             */
-/*   Updated: 2023/06/27 17:42:39 by rrupp            ###   ########.fr       */
+/*   Updated: 2023/06/28 09:22:51 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,29 +24,18 @@ Sed::~Sed()
 
 void	Sed::helper_fillfile(std::ifstream &input, std::ofstream &output)
 {
-	std::stringstream	temp;
-	// size_t		pos = 0;
-	// int			b_size = 1024;
-	// char		buffer[b_size];
+	std::stringstream	tempstream;
+	std::string			temp;
+	size_t		pos = 0;
 
-	temp << input.rdbuf();
-	// while (c)
-	// {
-		temp += c;
-		c = input.get();
-	// }
-	temp += c;
+	tempstream << input.rdbuf();
+	temp = tempstream.str();
+	while ((pos = temp.find(this->_str1, pos)) != std::string::npos)
+	{
+		temp = temp.substr(0, pos) + this->_str2 + temp.substr(pos + this->_str1.length());
+		pos += this->_str2.length();
+	}
 	output << temp << std::endl;
-	// while (fgets(buffer, b_size, input))
-	// {
-	// 	temp += buffer;
-	// }
-	// while ((pos = temp.find(this->_str1, pos)) != std::string::npos)
-	// {
-	// 	temp = temp.substr(0, pos) + this->_str2 + temp.substr(pos + this->_str1.length());
-	// 	pos += this->_str2.length();
-	// }
-	// fputs(temp.c_str(), output);
 	std::cout << "Finished writing to a differant file with alternated text!" << std::endl;
 }
 
