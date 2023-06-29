@@ -6,7 +6,7 @@
 /*   By: rrupp <rrupp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 10:29:37 by rrupp             #+#    #+#             */
-/*   Updated: 2023/06/29 13:00:23 by rrupp            ###   ########.fr       */
+/*   Updated: 2023/06/29 15:27:36 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ class Fixed
 		int					_fpnValue;
 		static const int	_fractionalBits = 8;
 };
-  
+
 	std::ostream	&operator << (std::ostream &os, const Fixed &rhs);
 
 #endif
