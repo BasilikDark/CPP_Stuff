@@ -6,7 +6,7 @@
 #    By: rrupp <rrupp@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/19 12:02:21 by rrupp             #+#    #+#              #
-#    Updated: 2023/06/28 11:09:04 by rrupp            ###   ########.fr        #
+#    Updated: 2023/07/01 16:08:34 by rrupp            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,8 @@ CC := c++
 OBJ_P := ./obj/
 
 SRC :=	main.cpp\
+		Point.cpp\
+		bsp.cpp\
 		Fixed.cpp
 
 OBJ := $(SRC:%.cpp=$(OBJ_P)%.o)

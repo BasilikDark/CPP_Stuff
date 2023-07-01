@@ -6,11 +6,12 @@
 /*   By: rrupp <rrupp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 11:02:28 by rrupp             #+#    #+#             */
-/*   Updated: 2023/06/29 12:53:03 by rrupp            ###   ########.fr       */
+/*   Updated: 2023/07/01 16:26:56 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "Fixed.hpp"
+# include "Point.hpp"
 
 int main(void)
 {
@@ -42,17 +43,28 @@ int main(void)
 	// 	std::cout << "c is " << c.toInt() << " as integer" << std::endl;
 	// 	std::cout << "d is " << d.toInt() << " as integer" << std::endl;
 	// }
-	{
-		Fixed a;
+	// {
+	// 	Fixed a;
 
-		Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
+	// 	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
 
-		std::cout << a << std::endl;
-		std::cout << ++a << std::endl;
-		std::cout << a << std::endl;
-		std::cout << a++ << std::endl;
-		std::cout << a << std::endl;
-		std::cout << b << std::endl;
-		std::cout << Fixed::max( a, b ) << std::endl;
-	}
+	// 	std::cout << a << std::endl;
+	// 	std::cout << ++a << std::endl;
+	// 	std::cout << a << std::endl;
+	// 	std::cout << a++ << std::endl;
+	// 	std::cout << a << std::endl;
+	// 	std::cout << b << std::endl;
+	// 	std::cout << Fixed::max( a, b ) << std::endl;
+	// }
+	Point	a(1, 5);
+	Point	b(4, 2);
+	Point	c(7, 9);
+	Point	point(3, 5);
+	
+
+
+	if (bsp(a, b, c, point))
+		std::cout << "yes" << std::endl;
+	else
+		std::cout << "no" << std::endl;
 }

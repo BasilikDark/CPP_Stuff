@@ -6,7 +6,7 @@
 /*   By: rrupp <rrupp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/29 15:30:58 by rrupp             #+#    #+#             */
-/*   Updated: 2023/06/29 16:06:30 by rrupp            ###   ########.fr       */
+/*   Updated: 2023/07/01 13:59:10 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,21 +18,20 @@
 class	Point
 {
 	public:
-		Point();
-		~Point();
+		Point(void);
+		Point(const float x, const float y);
+		Point(const Point &src);
+		~Point(void);
+
+		Point	&operator = (const Point &rhs);
+		Fixed	getX(void) const;
+		Fixed	getY(void) const;
 
 	private:
-		Fixed const	x;
-		Fixed const	y;
+		Fixed const	_x;
+		Fixed const	_y;
 };
 
-Point::Point()
-{
-}
-
-Point::~Point()
-{
-}
-
+bool	bsp(Point const a, Point const b, Point const c, Point const point);
 
 #endif
