@@ -6,7 +6,7 @@
 /*   By: rrupp <rrupp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/01 13:50:17 by rrupp             #+#    #+#             */
-/*   Updated: 2023/07/01 16:26:03 by rrupp            ###   ########.fr       */
+/*   Updated: 2023/07/02 10:18:07 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,12 @@ Point	&Point::operator = (const Point &rhs)
 	return (*this);
 }
 
-Fixed Point::getX(void) const
+Fixed	Point::getX(void) const
 {
 	return (this->_x);
 }
 
-Fixed Point::getY(void) const
+Fixed	Point::getY(void) const
 {
 	return (this->_y);
 }

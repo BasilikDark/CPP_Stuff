@@ -6,7 +6,7 @@
 /*   By: rrupp <rrupp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 11:02:28 by rrupp             #+#    #+#             */
-/*   Updated: 2023/07/01 16:26:56 by rrupp            ###   ########.fr       */
+/*   Updated: 2023/07/02 11:19:46 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,10 +56,10 @@ int main(void)
 	// 	std::cout << b << std::endl;
 	// 	std::cout << Fixed::max( a, b ) << std::endl;
 	// }
-	Point	a(1, 5);
-	Point	b(4, 2);
-	Point	c(7, 9);
-	Point	point(3, 5);
+	Point	a(1, 1);
+	Point	b(5, 5);
+	Point	c(6, 1);
+	Point	point(4, 2.33);
 	
 
 

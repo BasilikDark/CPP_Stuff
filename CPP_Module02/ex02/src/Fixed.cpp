@@ -6,7 +6,7 @@
 /*   By: rrupp <rrupp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 11:07:48 by rrupp             #+#    #+#             */
-/*   Updated: 2023/06/29 12:57:57 by rrupp            ###   ########.fr       */
+/*   Updated: 2023/07/02 10:11:25 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,7 +111,7 @@ Fixed	Fixed::operator - (const Fixed &rhs)
 {
 	Fixed	sum;
 
-	sum.setRawBits(this->_fpnValue + rhs.getRawBits());
+	sum.setRawBits(this->_fpnValue - rhs.getRawBits());
 	return (sum);
 }
 
@@ -127,7 +127,7 @@ Fixed	Fixed::operator / (const Fixed &rhs)
 {
 	Fixed	sum;
 
-	sum.setRawBits((this->toFloat() * rhs.toFloat()) * (1 << this->_fractionalBits));
+	sum.setRawBits((this->toFloat() / rhs.toFloat()) * (1 << this->_fractionalBits));
 	return (sum);
 }
 

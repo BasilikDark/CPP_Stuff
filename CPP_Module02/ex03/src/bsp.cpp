@@ -6,7 +6,7 @@
 /*   By: rrupp <rrupp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/01 13:59:13 by rrupp             #+#    #+#             */
-/*   Updated: 2023/07/01 16:01:37 by rrupp            ###   ########.fr       */
+/*   Updated: 2023/07/02 11:09:18 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,11 @@ bool	bsp(Point const a, Point const b, Point const c, Point const point)
 	Fixed	dotuw((v_ac.getX() * v_ap.getX()) + (v_ac.getY() * v_ap.getY()));
 
 	// Denominator
-	Fixed	denominator(dotu * dotv - dotuw * dotuw);
+	Fixed	denominator((dotu * dotv) - (dotuw * dotuw));
 	
 	// barycentric coordinates
-	Fixed	bcu((dotv * dotw - dotuw * dotu) / denominator);
-	Fixed	bcv((dotu * dotw - dotuw * dotv) / denominator);
+	Fixed	bcu(((dotv * dotw) - (dotuw * dotu)) / denominator);
+	Fixed	bcv(((dotu * dotw) - (dotuw * dotv)) / denominator);
 
 	// Fixed values to compare
 	Fixed	zero(0);
@@ -46,5 +46,16 @@ bool	bsp(Point const a, Point const b, Point const c, Point const point)
 	if (zero < bcu && bcu < one && zero < bcv && bcv < one && bcu + bcv < one)
 		return (true);
 	else
+	{
+		std::cout << "Vector AB = x: " << v_ab.getX() << " y: " << v_ab.getY() << std::endl;
+		std::cout << "Vector AC = x: " << v_ac.getX() << " y: " << v_ac.getY() << std::endl;
+		std::cout << "Vector AP = x: " << v_ap.getX() << " y: " << v_ap.getY() << std::endl;
+		std::cout <<  "dotu " << dotu << std::endl;
+		std::cout << "dotv " << dotv << std::endl;
+		std::cout << "dotw " << dotw << std::endl;
+		std::cout << "dotuw " << dotuw << std::endl;
+		std::cout << "denominator = " << denominator << std::endl;
+		std::cout << "bcu = " << bcu << " bcv = " << bcv << std::endl;
 		return (false);
+	}
 }

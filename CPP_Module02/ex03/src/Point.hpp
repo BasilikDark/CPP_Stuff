@@ -6,7 +6,7 @@
 /*   By: rrupp <rrupp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/29 15:30:58 by rrupp             #+#    #+#             */
-/*   Updated: 2023/07/01 13:59:10 by rrupp            ###   ########.fr       */
+/*   Updated: 2023/07/02 10:09:33 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ class	Point
 		Fixed const	_y;
 };
 
+// this function should only work if it gets the points in a counterclockwise order
 bool	bsp(Point const a, Point const b, Point const c, Point const point);
 
 #endif
