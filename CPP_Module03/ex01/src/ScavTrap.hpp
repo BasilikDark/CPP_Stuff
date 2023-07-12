@@ -1,33 +1,25 @@
 /******************************************************************************/
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rrupp <rrupp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/11 15:02:21 by rrupp             #+#    #+#             */
-/*   Updated: 2023/07/11 16:33:23 by rrupp            ###   ########.fr       */
+/*   Created: 2023/07/12 10:37:42 by rrupp             #+#    #+#             */
+/*   Updated: 2023/07/12 15:56:47 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
+#ifndef SCAFTRAP_HPP
+# define SCAFTRAP_HPP
+
 # include "ClapTrap.hpp"
 
-int	main(void)
+class	ScavTrap : public ClapTrap
 {
-	ClapTrap	karl("Karl");
-	ClapTrap	ruben("Ruben");
+	public:
+		void	guardGate(void);
+	private:
+};
 
-	karl.attack(ruben.getName());
-	ruben.takeDamage(karl.getAttackDamage());
-	ruben.attack("nothing");
-	ruben.attack("nothing");
-	ruben.attack("nothing");
-	ruben.attack("nothing");
-	ruben.attack("nothing");
-	ruben.attack("nothing");
-	ruben.attack("nothing");
-	ruben.attack("nothing");
-	ruben.attack("nothing");
-	ruben.attack("nothing");
-	ruben.attack("nothing");
-}
+#endif

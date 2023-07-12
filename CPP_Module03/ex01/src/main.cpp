@@ -5,29 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rrupp <rrupp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/11 15:02:21 by rrupp             #+#    #+#             */
-/*   Updated: 2023/07/11 16:33:23 by rrupp            ###   ########.fr       */
+/*   Created: 2023/07/12 14:07:49 by rrupp             #+#    #+#             */
+/*   Updated: 2023/07/12 14:27:56 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
-# include "ClapTrap.hpp"
+# include "ScavTrap.cpp"
 
 int	main(void)
 {
-	ClapTrap	karl("Karl");
-	ClapTrap	ruben("Ruben");
+	ClapTrap	franz("Franz");
+	ScavTrap	gio("Gio");
 
-	karl.attack(ruben.getName());
-	ruben.takeDamage(karl.getAttackDamage());
-	ruben.attack("nothing");
-	ruben.attack("nothing");
-	ruben.attack("nothing");
-	ruben.attack("nothing");
-	ruben.attack("nothing");
-	ruben.attack("nothing");
-	ruben.attack("nothing");
-	ruben.attack("nothing");
-	ruben.attack("nothing");
-	ruben.attack("nothing");
-	ruben.attack("nothing");
+	franz.attack("Gio");
+	gio.takeDamage(franz.getAttackDamage());
+	gio.guardGate();
 }
