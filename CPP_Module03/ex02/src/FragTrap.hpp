@@ -1,23 +1,29 @@
 /******************************************************************************/
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rrupp <rrupp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/12 14:07:49 by rrupp             #+#    #+#             */
-/*   Updated: 2023/07/13 10:19:59 by rrupp            ###   ########.fr       */
+/*   Created: 2023/07/13 10:34:10 by rrupp             #+#    #+#             */
+/*   Updated: 2023/07/13 11:27:39 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
-# include "ScavTrap.hpp"
+#ifndef FRAGTRAP_HPP
+# define FRAGTRAP_HPP
 
-int	main(void)
+# include "ClapTrap.hpp"
+
+class FragTrap : public ClapTrap
 {
-	ClapTrap	franz("Franz");
-	ScavTrap	gio("Gio");
+	public:
+		FragTrap(const std::string name = "");
+		FragTrap(const FragTrap &src);
+		const FragTrap	&operator = (const FragTrap &rhs);
+		void			highFivesGuys(void) const;
+		~FragTrap();
+	private:
+};
 
-	franz.attack("Gio");
-	gio.takeDamage(franz.getAttackDamage());
-	gio.guardGate();
-}
+#endif

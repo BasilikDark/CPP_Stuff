@@ -6,21 +6,22 @@
 #    By: rrupp <rrupp@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/19 12:02:21 by rrupp             #+#    #+#              #
-#    Updated: 2023/07/13 10:10:10 by rrupp            ###   ########.fr        #
+#    Updated: 2023/07/13 11:28:58 by rrupp            ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
-NAME := scavTrap
+NAME := FragTrap
 
-CFLAGS := -Wall -Werror -Wextra -std=c++98 -g
+CFLAGS := -Wall -Werror -Wextra -std=c++98
 
 CC := c++
 
 OBJ_P := ./obj/
 
-SRC :=	main.cpp\
+SRC :=	ClapTrap.cpp\
 		ScavTrap.cpp\
-		ClapTrap.cpp
+		FragTrap.cpp\
+		main.cpp
 
 OBJ := $(SRC:%.cpp=$(OBJ_P)%.o)
 
