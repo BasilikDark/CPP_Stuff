@@ -6,7 +6,7 @@
 /*   By: rrupp <rrupp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 14:07:49 by rrupp             #+#    #+#             */
-/*   Updated: 2023/07/13 11:30:11 by rrupp            ###   ########.fr       */
+/*   Updated: 2023/07/14 09:38:33 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -23,4 +23,12 @@ int	main(void)
 	gio.takeDamage(franz.getAttackDamage());
 	gio.guardGate();
 	gWolf.highFivesGuys();
+	gWolf.attack("Gio");
+	gio.takeDamage(gWolf.getAttackDamage());
+	gWolf.attack("Gio");
+	gio.takeDamage(gWolf.getAttackDamage());
+	gWolf.attack("Gio");
+	gio.takeDamage(gWolf.getAttackDamage());
+	gWolf.attack("Gio");
+	gio.takeDamage(gWolf.getAttackDamage());
 }
