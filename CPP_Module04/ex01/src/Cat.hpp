@@ -6,7 +6,7 @@
 /*   By: rrupp <rrupp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 13:55:51 by rrupp             #+#    #+#             */
-/*   Updated: 2023/07/21 14:47:49 by rrupp            ###   ########.fr       */
+/*   Updated: 2023/07/22 09:51:39 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define CAT_HPP
 
 # include "Animal.hpp"
+# include "Brain.hpp"
 
 class Cat : public Animal
 {
@@ -28,6 +29,7 @@ class Cat : public Animal
 
 		~Cat();
 	private:
+		Brain	*_brain;
 };
 
 #endif

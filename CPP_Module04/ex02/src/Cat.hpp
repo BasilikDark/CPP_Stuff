@@ -1,31 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rrupp <rrupp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/21 14:28:40 by rrupp             #+#    #+#             */
-/*   Updated: 2023/07/23 09:01:44 by rrupp            ###   ########.fr       */
+/*   Created: 2023/07/21 13:55:51 by rrupp             #+#    #+#             */
+/*   Updated: 2023/07/23 09:02:10 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
-#include "Dog.hpp"
+#ifndef CAT_HPP
+# define CAT_HPP
 
-int main(void)
+# include "Animal.hpp"
+# include "Brain.hpp"
+
+class Cat : public Animal
 {
-	const Animal* meta = new Animal();
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
-	i->makeSound(); 
-	j->makeSound();
-	meta->makeSound();
+	public:
+		Cat();
+		Cat(const Cat &src);
 
-	delete meta;
-	delete j;
-	delete i;
-	return (0);
-}
+		Cat 		&operator = (const Cat &rhs);
+
+		std::string	getType(void) const;
+		void		makeSound(void) const;
+
+		~Cat();
+	private:
+		Brain	*_brain;
+};
+
+#endif

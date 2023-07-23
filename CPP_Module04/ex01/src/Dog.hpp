@@ -6,7 +6,7 @@
 /*   By: rrupp <rrupp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 14:19:43 by rrupp             #+#    #+#             */
-/*   Updated: 2023/07/21 14:47:58 by rrupp            ###   ########.fr       */
+/*   Updated: 2023/07/23 11:08:57 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define DOG_HPP
 
 # include "Animal.hpp"
+# include "Brain.hpp"
 
 class Dog : public Animal
 {
@@ -28,6 +29,7 @@ class Dog : public Animal
 
 		~Dog();
 	private:
+		Brain		*_brain;
 };
 
 #endif

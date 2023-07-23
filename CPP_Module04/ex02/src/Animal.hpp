@@ -1,31 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rrupp <rrupp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/21 14:28:40 by rrupp             #+#    #+#             */
-/*   Updated: 2023/07/23 09:01:44 by rrupp            ###   ########.fr       */
+/*   Created: 2023/07/21 13:19:51 by rrupp             #+#    #+#             */
+/*   Updated: 2023/07/23 10:49:46 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
-#include "Dog.hpp"
+#ifndef ANIMAL_HPP
+# define ANIMAL_HPP
 
-int main(void)
+# include <iostream>
+
+struct	Animal
 {
-	const Animal* meta = new Animal();
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
-	i->makeSound(); 
-	j->makeSound();
-	meta->makeSound();
+	public:
+		Animal();
+		Animal(const Animal &src);
 
-	delete meta;
-	delete j;
-	delete i;
-	return (0);
-}
+		virtual Animal	&operator = (const Animal &rhs);
+
+		virtual void		makeSound() const = 0;
+		virtual	std::string	getType() const;
+
+		virtual ~Animal();
+	protected:
+		std::string	_type;
+};
+
+#endif
