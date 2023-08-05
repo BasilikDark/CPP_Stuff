@@ -6,7 +6,7 @@
 /*   By: rrupp <rrupp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 11:02:28 by rrupp             #+#    #+#             */
-/*   Updated: 2023/06/28 15:06:05 by rrupp            ###   ########.fr       */
+/*   Updated: 2023/08/05 14:07:16 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ int main(void)
 	// }
 	{
 		Fixed a;
-		Fixed const b( 10 );
-		Fixed const c( 42.42f );
+		Fixed const b( -10 );
+		Fixed const c( -42.42f );
 		Fixed const d( b );
 
 		a = Fixed( 1234.4321f );

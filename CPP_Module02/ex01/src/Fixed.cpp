@@ -6,7 +6,7 @@
 /*   By: rrupp <rrupp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 11:07:48 by rrupp             #+#    #+#             */
-/*   Updated: 2023/06/28 15:10:42 by rrupp            ###   ########.fr       */
+/*   Updated: 2023/08/05 14:06:17 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ float	Fixed::toFloat(void) const
 
 int	Fixed::toInt(void) const
 {
-	return (this->_fpnValue >> this->_fractionalBits);
+	return (roundf(this->toFloat()));
 }
 
 std::ostream	&operator << (std::ostream &os, const Fixed &rhs)
