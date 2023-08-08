@@ -6,7 +6,7 @@
 /*   By: rrupp <rrupp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/16 12:53:57 by rrupp             #+#    #+#             */
-/*   Updated: 2023/07/20 11:30:33 by rrupp            ###   ########.fr       */
+/*   Updated: 2023/08/08 11:50:29 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,29 +16,20 @@
 # include "FragTrap.hpp"
 # include "ScavTrap.hpp"
 
-class DiamondTrap : public ScavTrap, public ClapTrap
+class DiamondTrap : public ScavTrap, public FragTrap
 {
-public:
-	DiamondTrap(std::string name = "");
-	DiamondTrap(const DiamondTrap &src);
+	public:
+		DiamondTrap(std::string name = "");
+		DiamondTrap(const DiamondTrap &src);
 
-	DiamondTrap	&operator = (const DiamondTrap &rhs);
+		DiamondTrap	&operator = (const DiamondTrap &rhs);
 
-	void	attack();
+		void		whoAmI(void) const;
 
-	~DiamondTrap();
-private:
-	std::string	_name;
+		~DiamondTrap();
+
+	private:
+		std::string	_name;
 };
-
-DiamondTrap::DiamondTrap(std::string name) : _name(name)
-{
-	this->_hitPoints;
-}
-
-DiamondTrap::~DiamondTrap()
-{
-}
-
 
 #endif

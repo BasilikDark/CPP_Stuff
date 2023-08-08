@@ -6,13 +6,13 @@
 #    By: rrupp <rrupp@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/19 12:02:21 by rrupp             #+#    #+#              #
-#    Updated: 2023/07/20 11:34:57 by rrupp            ###   ########.fr        #
+#    Updated: 2023/08/08 11:53:17 by rrupp            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME := DiamondTrap
 
-CFLAGS := -Wall -Werror -Wextra -std=c++98
+CFLAGS := -Wall -Werror -Wextra -Wno-shadow -std=c++98
 
 CC := c++
 
@@ -21,6 +21,7 @@ OBJ_P := ./obj/
 SRC :=	ClapTrap.cpp\
 		ScavTrap.cpp\
 		FragTrap.cpp\
+		DiamondTrap.cpp\
 		main.cpp
 
 OBJ := $(SRC:%.cpp=$(OBJ_P)%.o)

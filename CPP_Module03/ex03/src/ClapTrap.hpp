@@ -6,7 +6,7 @@
 /*   By: rrupp <rrupp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 10:45:38 by rrupp             #+#    #+#             */
-/*   Updated: 2023/07/20 09:58:17 by rrupp            ###   ########.fr       */
+/*   Updated: 2023/08/08 10:05:21 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,5 @@ class ClapTrap
 		int			_energyPoints;
 		int			_attackDamage;
 };
-
-
 
 #endif
