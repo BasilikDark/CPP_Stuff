@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rrupp <rrupp@student.42vienna.com>         +#+  +:+       +#+        */
+/*   By: rrupp <rrupp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 15:37:57 by rrupp             #+#    #+#             */
-/*   Updated: 2023/06/03 20:53:16 by rrupp            ###   ########.fr       */
+/*   Updated: 2023/08/08 13:20:07 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ int	main(void)
 
 	N = 5;
 	zombies = zombieHorde(N, "Olafs");
+	if (zombies == NULL)
+		return (0);
 	for (int i = 0; i < N; i++)
 		zombies[i].announce();
 	delete[] zombies;

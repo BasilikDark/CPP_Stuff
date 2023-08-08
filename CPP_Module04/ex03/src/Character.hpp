@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
+/*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rrupp <rrupp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/03 17:01:43 by rrupp             #+#    #+#             */
-/*   Updated: 2023/08/08 13:19:36 by rrupp            ###   ########.fr       */
+/*   Created: 2023/08/08 17:35:11 by rrupp             #+#    #+#             */
+/*   Updated: 2023/08/08 17:39:26 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef CHARACTER_HPP
+# define CHARATER_HPP
 
-Zombie	*zombieHorde(int N, std::string name)
+# include "AMateria.hpp"
+# include "ICharacter.hpp"
+
+class Character
 {
-	Zombie	*zombieHorde;
+public:
+	virtual ~Character();
+	virtual std::string const & getName() const = 0;
+	virtual void equip(AMateria *m) = 0;
+	virtual void unequip(int idx) = 0;
+	virtual void use(int idx, ICharacter &target) = 0;
+};
 
-	if (N < 0)
-		return (NULL);
-	zombieHorde = new Zombie[N];
-	for (int i = 0; i < N; i++)
-		zombieHorde[i].setName(name);
-	return (zombieHorde);
-}
+Character::~Character() {}
+
+#endif
