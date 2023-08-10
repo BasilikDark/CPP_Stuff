@@ -6,7 +6,7 @@
 /*   By: rrupp <rrupp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 13:08:05 by rrupp             #+#    #+#             */
-/*   Updated: 2023/08/08 17:34:47 by rrupp            ###   ########.fr       */
+/*   Updated: 2023/08/09 11:39:55 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define AMATERIA_HPP
 
 # include <iostream>
-# include "Character.hpp"
+# include "ICharacter.hpp"
 
 class AMateria
 {
