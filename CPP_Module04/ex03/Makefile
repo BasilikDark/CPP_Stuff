@@ -3,22 +3,22 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: rrupp <rrupp@student.42vienna.com>         +#+  +:+       +#+         #
+#    By: rrupp <rrupp@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/19 12:02:21 by rrupp             #+#    #+#              #
-#    Updated: 2023/06/06 11:47:01 by rrupp            ###   ########.fr        #
+#    Updated: 2023/08/11 17:25:32 by rrupp            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME := #progam name
+NAME := bullshit
 
-CFLAGS := -Wall -Werror -Wextra -std=c++98
+CFLAGS := -Wall -Werror -Wextra -std=c++98 -g
 
 CC := c++
 
 OBJ_P := ./obj/
 
-SRC :=	# programs with a \ until the one befor the last
+SRC :=	main.cpp
 
 OBJ := $(SRC:%.cpp=$(OBJ_P)%.o)
 

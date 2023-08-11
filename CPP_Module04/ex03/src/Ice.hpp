@@ -6,7 +6,7 @@
 /*   By: rrupp <rrupp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 16:20:05 by rrupp             #+#    #+#             */
-/*   Updated: 2023/08/09 11:52:25 by rrupp            ###   ########.fr       */
+/*   Updated: 2023/08/11 17:46:51 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,21 @@ Ice::Ice() : AMateria("ice")
 	std::cout << "Ice Constructor called!" << std::endl;
 }
 
-Ice::Ice(const Ice &src) : AMateria(src.getType()){}
+Ice::Ice(const Ice &src) : AMateria(src.getType())
+{
+	std::cout << "Ice Copyconstructor called!" << std::endl;
+}
 
-const Ice	&Ice::operator = (const Ice &rhs) {return (*this);}
+const Ice	&Ice::operator = (const Ice &rhs)
+{
+	std::cout << "Ice Copy Operator called!" << std::endl;
+	(void)rhs;
+	return (*this);
+}
 
 Ice	*Ice::clone(void) const
 {
+	std::cout << "Ice Clone function called!" << std::endl;
 	Ice *tmp = new Ice;
 	return (tmp);
 }

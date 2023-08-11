@@ -6,7 +6,7 @@
 /*   By: rrupp <rrupp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 16:24:31 by rrupp             #+#    #+#             */
-/*   Updated: 2023/08/08 17:26:03 by rrupp            ###   ########.fr       */
+/*   Updated: 2023/08/11 13:58:17 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,19 +33,28 @@ Cure::Cure() : AMateria("cure")
 	std::cout << "Cure Constructor called!" << std::endl;
 }
 
-Cure::Cure(Cure const &src) : AMateria(src.getType()) {}
+Cure::Cure(Cure const &src) : AMateria(src.getType())
+{
+	std::cout << "Cure Copyconstructor called!" << std::endl;
+}
 
-Cure const	&Cure::operator = (Cure const &rhs) {return (*this);}
+Cure const	&Cure::operator = (Cure const &rhs)
+{
+	std::cout << "Cure Copy Operator called!" << std::endl;
+	(void)rhs;
+	return (*this);
+}
 
 Cure	*Cure::clone(void) const
 {
+	std::cout << "Cure clone function called!" << std::endl;
 	Cure	*tmp = new Cure;
 	return (tmp);
 }
 
 void	Cure::use(ICharacter &target) const
 {
-	std::cout << "* heals " << target.getName() << " wounds *" << std::endl;
+	std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
 }
 
 Cure::~Cure()

@@ -6,7 +6,7 @@
 /*   By: rrupp <rrupp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 13:08:05 by rrupp             #+#    #+#             */
-/*   Updated: 2023/08/09 11:39:55 by rrupp            ###   ########.fr       */
+/*   Updated: 2023/08/11 17:42:49 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define AMATERIA_HPP
 
 # include <iostream>
-# include "ICharacter.hpp"
+#include "ICharacter.hpp"
 
 class AMateria
 {
@@ -25,13 +25,13 @@ class AMateria
 		AMateria 			&operator = (AMateria const &rhs);
 		const std::string	&getType() const;
 		virtual AMateria	*clone() const = 0;
-		virtual void		use(ICharacter &target);
+		virtual void		use(ICharacter &target) const;
 		
 		
-		~AMateria();
+		virtual	~AMateria();
 
 	protected:
-		const std::string	&_type;
+		const std::string	_type;
 };
 
 AMateria::AMateria(std::string const &type) : _type(type)
@@ -46,13 +46,15 @@ AMateria::AMateria(AMateria const &src) : _type(src.getType())
 
 AMateria	&AMateria::operator = (AMateria const &rhs)
 {
+	(void)rhs;
 	std::cout << "AMateria = operator called!" << std::endl;
 	return (*this);
 }
 
 const std::string	&AMateria::getType() const
 {
-	return (this->_type);
+	// std::cout << "AMateria getType function called!" << std::endl;
+	return (_type);
 }
 
 void	AMateria::use(ICharacter &target) const
