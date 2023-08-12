@@ -6,49 +6,39 @@
 /*   By: rrupp <rrupp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 11:50:19 by rrupp             #+#    #+#             */
-/*   Updated: 2023/08/10 16:24:28 by rrupp            ###   ########.fr       */
+/*   Updated: 2023/08/12 12:10:56 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name)
-{
-	this->_name = name + "_clap_name";
+/*Con- and Destructor's*/
+DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name") {
+	this->_name = name;
 	FragTrap::_hitPoints = 100;
 	ScavTrap::_energyPoints = 50;
 	FragTrap::_attackDamage = 30;
-	// std::cout << "blub" << this->_hitPoints << " " << this->_energyPoints << " " << this->_attackDamage << std::endl;
-	// this->_hitPoints = FragTrap::_hitPoints;
-	// this->_energyPoints = ScavTrap::_energyPoints;
-	// this->_attackDamage = FragTrap::_attackDamage;
 	std::cout << this->_name << " " << ClapTrap::_name << " got constructed!" << std::endl;
 }
 
-DiamondTrap::DiamondTrap(const DiamondTrap &src) : ClapTrap(src.ClapTrap::_name)
-{
-	*this = src;
-	std::cout << this->_name << " " << ClapTrap::_name << " Copyconstructor got called!" << std::endl;
+DiamondTrap::DiamondTrap(const DiamondTrap &src) : ClapTrap(src.ClapTrap::_name) {*this = src;}
+
+DiamondTrap::~DiamondTrap() {
+	std::cout << this->_name << " " << ClapTrap::_name << " got destructed!" << std::endl;
 }
 
-DiamondTrap	&DiamondTrap::operator = (const DiamondTrap &rhs)
-{
+/*Operator Overload's*/
+DiamondTrap	&DiamondTrap::operator = (const DiamondTrap &rhs) {
 	this->_name = rhs._name;
 	this->_hitPoints = rhs._hitPoints;
 	this->_energyPoints = rhs._energyPoints;
 	this->_attackDamage = rhs._attackDamage;
 	ClapTrap::_name = rhs.ClapTrap::_name;
-	std::cout << this->_name << " " << ClapTrap::_name << " = operator got called!" << std::endl;
 	return (*this);
 }
 
-void	DiamondTrap::whoAmI(void) const
-{
+/*memberfunctions*/
+void	DiamondTrap::whoAmI(void) const {
 	std::cout << "Hi my name is " << ClapTrap::_name;
 	std::cout << " and I am a " << this->_name << "!" << std::endl;
-}
-
-DiamondTrap::~DiamondTrap()
-{
-	std::cout << this->_name << " " << ClapTrap::_name << " got destructed!" << std::endl;
 }
