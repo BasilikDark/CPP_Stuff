@@ -6,14 +6,13 @@
 /*   By: rrupp <rrupp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/01 13:59:13 by rrupp             #+#    #+#             */
-/*   Updated: 2023/08/05 10:29:14 by rrupp            ###   ########.fr       */
+/*   Updated: 2023/08/12 10:12:42 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Point.hpp"
 
-static Fixed	add_triangle(Point const p1, Point const p2, Point const p3)
-{
+static Fixed	add_triangle(Point const p1, Point const p2, Point const p3) {
 	Fixed triangle((p1.getX() * (p2.getY() - p3.getY()) + \
 		p2.getX() * (p3.getY() - p1.getY()) + \
 		p3.getX() * (p1.getY() - p2.getY())) / (Fixed)2);
@@ -22,8 +21,7 @@ static Fixed	add_triangle(Point const p1, Point const p2, Point const p3)
 	return (triangle);
 }
 
-bool bsp(Point const a, Point const b, Point const c, Point const point)
-{
+bool bsp(Point const a, Point const b, Point const c, Point const point) {
 	Fixed area(add_triangle(a, b, c));
 	Fixed area1(add_triangle(point, b, c));
 	Fixed area2(add_triangle(a, point, c));

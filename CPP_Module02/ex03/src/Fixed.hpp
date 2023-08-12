@@ -6,7 +6,7 @@
 /*   By: rrupp <rrupp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 10:29:37 by rrupp             #+#    #+#             */
-/*   Updated: 2023/06/29 15:27:36 by rrupp            ###   ########.fr       */
+/*   Updated: 2023/08/12 09:48:52 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,16 +27,16 @@ class Fixed
 		~Fixed();
 
 		Fixed				&operator = (const Fixed &rhs);
-		bool				operator > (const Fixed &rhs);
-		bool				operator < (const Fixed &rhs);
-		bool				operator >= (const Fixed &rhs);
-		bool				operator <= (const Fixed &rhs);
-		bool				operator == (const Fixed &rhs);
-		bool				operator != (const Fixed &rhs);
-		Fixed				operator + (const Fixed &rhs);
-		Fixed				operator - (const Fixed &rhs);
-		Fixed				operator * (const Fixed &rhs);
-		Fixed				operator / (const Fixed &rhs);
+		bool				operator > (const Fixed &rhs) const;
+		bool				operator < (const Fixed &rhs) const;
+		bool				operator >= (const Fixed &rhs) const;
+		bool				operator <= (const Fixed &rhs) const;
+		bool				operator == (const Fixed &rhs) const;
+		bool				operator != (const Fixed &rhs) const;
+		Fixed				operator + (const Fixed &rhs) const;
+		Fixed				operator - (const Fixed &rhs) const;
+		Fixed				operator * (const Fixed &rhs) const;
+		Fixed				operator / (const Fixed &rhs) const;
 		Fixed				operator ++ (int);
 		Fixed				&operator ++ (void);
 		Fixed				operator -- (int);
