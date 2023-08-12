@@ -1,37 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rrupp <rrupp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/21 14:39:20 by rrupp             #+#    #+#             */
-/*   Updated: 2023/08/12 13:32:06 by rrupp            ###   ########.fr       */
+/*   Created: 2023/08/12 15:30:13 by rrupp             #+#    #+#             */
+/*   Updated: 2023/08/12 15:30:30 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "Cure.hpp"
 
-/*Con- and Destructor's*/
-Cat::Cat() : Animal("Cat") {
-	std::cout << "Cat Constructor called" << std::endl;
+/*Con- and Destructor*/
+Cure::Cure() : AMateria("cure") {
+	std::cout << "Cure Constructor called!" << std::endl;
 }
 
-Cat::Cat(const Cat &src) : Animal("Cat"){
-	(void)src;
-}
+Cure::Cure(Cure const &src) : AMateria(src.getType()) {}
 
-Cat::~Cat() {
-	std::cout << "Cat Deconstructor called" << std::endl;
-}
+Cure::~Cure() {}
 
 /*Operator Overload's*/
-Cat	&Cat::operator = (const Cat &rhs) {
+Cure const	&Cure::operator = (Cure const &rhs) {
 	(void)rhs;
 	return (*this);
 }
 
-/*Memberfunctions*/
-void	Cat::makeSound(void) const {
-	std::cout << "Miiiaaauuu" << std::endl;
+/*Memberfunction*/
+Cure	*Cure::clone(void) const {return (new Cure);}
+
+void	Cure::use(ICharacter &target) const {
+	std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
 }
+

@@ -1,40 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   WrongWrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rrupp <rrupp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/21 14:34:25 by rrupp             #+#    #+#             */
-/*   Updated: 2023/08/12 15:15:48 by rrupp            ###   ########.fr       */
+/*   Created: 2023/07/21 14:39:20 by rrupp             #+#    #+#             */
+/*   Updated: 2023/08/12 13:47:15 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "WrongCat.hpp"
 
 /*Con- and Destructor's*/
-Dog::Dog() : AAnimal("Dog") {
-	this->_brain = new Brain;
-	std::cout << "Dog Constructor called" << std::endl;
+WrongCat::WrongCat() : WrongAnimal("WrongCat") {
+	std::cout << "WrongCat Constructor called" << std::endl;
 }
 
-Dog::Dog(const Dog &src) : AAnimal("Dog") {
-	this->_brain = new Brain;
-	*this = src;
+WrongCat::WrongCat(const WrongCat &src) : WrongAnimal("WrongCat"){
+	(void)src;
 }
 
-Dog::~Dog() {
-	delete this->_brain;
-	std::cout << "Dog Deconstructor called" << std::endl;
+WrongCat::~WrongCat() {
+	std::cout << "WrongCat Deconstructor called" << std::endl;
 }
 
 /*Operator Overload's*/
-Dog	&Dog::operator = (const Dog &rhs) {
-	*(this->_brain) = *(rhs._brain);
+WrongCat	&WrongCat::operator = (const WrongCat &rhs) {
+	(void)rhs;
 	return (*this);
 }
 
 /*Memberfunctions*/
-void	Dog::makeSound(void) const {
-	std::cout << "Bark" << std::endl;
+void	WrongCat::makeSound(void) const {
+	std::cout << "Miiiaaauuu" << std::endl;
 }

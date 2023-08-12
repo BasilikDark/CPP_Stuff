@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   WrongAnimal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rrupp <rrupp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,32 +10,32 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "WrongAnimal.hpp"
 
 /*Con- and Destructor's*/
-Animal::Animal(const std::string type) : _type(type) {
-	std::cout << "Animal Constructor called" << std::endl;
+WrongAnimal::WrongAnimal(const std::string type) : _type(type) {
+	std::cout << "WrongAnimal Constructor called" << std::endl;
 }
 
-Animal::Animal(const Animal &src) : _type(src.getType()) {
-	std::cout << "Animal Copyconstructor called" << std::endl;
+WrongAnimal::WrongAnimal(const WrongAnimal &src) : _type(src.getType()) {
+	std::cout << "WrongAnimal Copyconstructor called" << std::endl;
 }
 
-Animal::~Animal() {
-	std::cout << "Animal Decconstructor called" << std::endl;
+WrongAnimal::~WrongAnimal() {
+	std::cout << "WrongAnimal Decconstructor called" << std::endl;
 }
 
 /*Operator Overload's*/
-Animal	&Animal::operator = (const Animal &rhs) {
+WrongAnimal	&WrongAnimal::operator = (const WrongAnimal &rhs) {
 	(void)rhs;
-	std::cout << "Animal = operator called" << std::endl;
+	std::cout << "WrongAnimal = operator called" << std::endl;
 	return (*this);
 }
 
 /*Getter and Setter*/
-std::string Animal::getType(void) const {return (this->_type);}
+std::string WrongAnimal::getType(void) const {return (this->_type);}
 
 /*Mamberfunctions*/
-void	Animal::makeSound(void) const {
+void	WrongAnimal::makeSound(void) const {
 	std::cout << "Some strange noices!?" << std::endl;
 }

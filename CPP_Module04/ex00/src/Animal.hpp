@@ -6,7 +6,7 @@
 /*   By: rrupp <rrupp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 13:19:51 by rrupp             #+#    #+#             */
-/*   Updated: 2023/07/21 14:57:38 by rrupp            ###   ########.fr       */
+/*   Updated: 2023/08/12 12:33:03 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,22 @@
 class	Animal
 {
 	public:
-		Animal();
+		/*Con- and Destructor's*/
+		Animal(const std::string type = "");
 		Animal(const Animal &src);
+		virtual ~Animal();
 
+		/*Operator Overload's*/
 		virtual Animal	&operator = (const Animal &rhs);
 
-		virtual void		makeSound() const;
+		/*Getter and Setter*/
 		virtual	std::string	getType() const;
 
-		virtual ~Animal();
+		/*Memberfunctions*/
+		virtual void		makeSound() const;
+
 	protected:
+		/*Variables*/
 		std::string	_type;
 };
 

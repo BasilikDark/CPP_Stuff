@@ -6,38 +6,36 @@
 /*   By: rrupp <rrupp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 14:39:56 by rrupp             #+#    #+#             */
-/*   Updated: 2023/07/23 10:46:31 by rrupp            ###   ########.fr       */
+/*   Updated: 2023/08/12 15:13:32 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 
-Animal::Animal()
-{
-	this->_type = "";
-	std::cout << "Animal Constructor called" << std::endl;
+/*Con- and Destructor's*/
+AAnimal::AAnimal(const std::string type) : _type(type) {
+	std::cout << "AAnimal Constructor called" << std::endl;
 }
 
-Animal::Animal(const Animal &src)
-{
-    this->_type = src.getType();
-	std::cout << "Animal Copyconstructor called" << std::endl;
+AAnimal::AAnimal(const AAnimal &src) : _type(src.getType()) {
+	std::cout << "AAnimal Copyconstructor called" << std::endl;
 }
 
-Animal	&Animal::operator = (const Animal &rhs)
-{
-    this->_type = rhs.getType();
-	std::cout << "Animal = operator called" << std::endl;
+AAnimal::~AAnimal() {
+	std::cout << "AAnimal Decconstructor called" << std::endl;
+}
+
+/*Operator Overload's*/
+AAnimal	&AAnimal::operator = (const AAnimal &rhs) {
+	(void)rhs;
+	std::cout << "AAnimal = operator called" << std::endl;
 	return (*this);
 }
 
-std::string Animal::getType(void) const
-{
-    return (this->_type);
-}
+/*Getter and Setter*/
+std::string AAnimal::getType(void) const {return (this->_type);}
 
-Animal::~Animal()
-{
-	std::cout << "Animal Decconstructor called" << std::endl;
-}
-
+/*Mamberfunctions*/
+// void	Animal::makeSound(void) const {
+// 	std::cout << "Some strange noices!?" << std::endl;
+// }

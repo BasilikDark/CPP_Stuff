@@ -6,7 +6,7 @@
 #    By: rrupp <rrupp@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/19 12:02:21 by rrupp             #+#    #+#              #
-#    Updated: 2023/07/22 09:59:30 by rrupp            ###   ########.fr        #
+#    Updated: 2023/08/12 15:16:08 by rrupp            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ CC := c++
 
 OBJ_P := ./obj/
 
-SRC :=	Animal.cpp	\
+SRC :=	AAnimal.cpp	\
 		Cat.cpp		\
 		Dog.cpp		\
 		Brain.cpp	\

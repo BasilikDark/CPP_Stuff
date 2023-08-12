@@ -6,7 +6,7 @@
 /*   By: rrupp <rrupp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 11:50:19 by rrupp             #+#    #+#             */
-/*   Updated: 2023/08/12 12:10:56 by rrupp            ###   ########.fr       */
+/*   Updated: 2023/08/12 12:19:46 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,6 @@ DiamondTrap	&DiamondTrap::operator = (const DiamondTrap &rhs) {
 
 /*memberfunctions*/
 void	DiamondTrap::whoAmI(void) const {
-	std::cout << "Hi my name is " << ClapTrap::_name;
-	std::cout << " and I am a " << this->_name << "!" << std::endl;
+	std::cout << "Hi my Claptrap_name is: " << ClapTrap::_name;
+	std::cout << " and my name is: " << this->_name << "!" << std::endl;
 }

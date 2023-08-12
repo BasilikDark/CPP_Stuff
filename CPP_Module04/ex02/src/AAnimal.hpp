@@ -1,35 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   AAnimal.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rrupp <rrupp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/21 13:55:51 by rrupp             #+#    #+#             */
-/*   Updated: 2023/08/12 13:27:09 by rrupp            ###   ########.fr       */
+/*   Created: 2023/07/21 13:19:51 by rrupp             #+#    #+#             */
+/*   Updated: 2023/08/12 15:17:01 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-# define CAT_HPP
+#ifndef AANIMAL_HPP
+# define AANIMAL_HPP
 
-# include "Animal.hpp"
+# include <iostream>
 
-class Cat : public Animal
+class	AAnimal
 {
 	public:
 		/*Con- and Destructor's*/
-		Cat();
-		Cat(const Cat &src);
-		~Cat();
+		AAnimal(const std::string type = "");
+		AAnimal(const AAnimal &src);
+		virtual ~AAnimal();
 
 		/*Operator Overload's*/
-		Cat 		&operator = (const Cat &rhs);
+		virtual AAnimal	&operator = (const AAnimal &rhs);
 
-		/*Memberfunction's*/
-		void		makeSound(void) const;
+		/*Getter and Setter*/
+		virtual	std::string	getType() const;
 
-	private:
+		/*Memberfunctions*/
+		virtual void		makeSound() const = 0 ;
+
+	protected:
+		/*Variables*/
+		std::string	_type;
 };
 
 #endif

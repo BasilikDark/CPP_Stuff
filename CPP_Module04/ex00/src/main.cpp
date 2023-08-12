@@ -6,15 +6,14 @@
 /*   By: rrupp <rrupp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 14:28:40 by rrupp             #+#    #+#             */
-/*   Updated: 2023/07/21 14:58:35 by rrupp            ###   ########.fr       */
+/*   Updated: 2023/08/12 13:54:28 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 #include "Dog.hpp"
 
-int main(void)
-{
+int main(void) {
 	const Animal* meta = new Animal();
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();

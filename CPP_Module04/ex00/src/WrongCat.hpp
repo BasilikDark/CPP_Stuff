@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   WrongCat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rrupp <rrupp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,21 +10,21 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-# define CAT_HPP
+#ifndef WrongCat_HPP
+# define WrongCat_HPP
 
-# include "Animal.hpp"
+# include "WrongAnimal.hpp"
 
-class Cat : public Animal
+class WrongCat : public WrongAnimal
 {
 	public:
 		/*Con- and Destructor's*/
-		Cat();
-		Cat(const Cat &src);
-		~Cat();
+		WrongCat();
+		WrongCat(const WrongCat &src);
+		~WrongCat();
 
 		/*Operator Overload's*/
-		Cat 		&operator = (const Cat &rhs);
+		WrongCat 		&operator = (const WrongCat &rhs);
 
 		/*Memberfunction's*/
 		void		makeSound(void) const;
