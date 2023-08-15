@@ -6,7 +6,7 @@
 /*   By: rrupp <rrupp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 15:20:18 by rrupp             #+#    #+#             */
-/*   Updated: 2023/08/15 15:44:13 by rrupp            ###   ########.fr       */
+/*   Updated: 2023/08/15 16:00:47 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,20 +39,22 @@ class Form
 		class GradeTooLowException : public std::exception {
 			virtual const char	*what() const throw();
 		} low;
+		void	formThrow(int garde) const;
 };
 
 Form::Form(std::string name, int toSign, int toExecute) : _name(name), _ableToSign(toSign), _ableToExecute(toExecute)
 {
 	if (!(toSign >= 1 && toSign <= 150))
-		
-	if (!(toSign >= 1 && toSign <= 150))
+		formThrow(toSign);
+	if (!(toExecute >= 1 && toExecute <= 150))
+		formThrow(toExecute);
 }
 
 Form::~Form()
 {
 }
 
-void	Bureaucrat::bureaucratThrow(int grade) const {
+void	Form::formThrow(int grade) const {
 	if (grade > 150)
 		throw low;
 	else
