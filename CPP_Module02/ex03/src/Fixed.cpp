@@ -6,7 +6,7 @@
 /*   By: rrupp <rrupp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 11:07:48 by rrupp             #+#    #+#             */
-/*   Updated: 2023/08/12 10:18:20 by rrupp            ###   ########.fr       */
+/*   Updated: 2023/08/15 12:19:30 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,4 @@ Fixed	&Fixed::max(Fixed &a, Fixed &b) {return (a >= b ? a : b);}
 
 Fixed const	&Fixed::max(Fixed const &a, Fixed const &b) {return (a >= b ? a : b);}
 
-std::ostream	&operator << (std::ostream &os, const Fixed &rhs) {
-	os << rhs.toFloat();
-	return (os);
-}
+std::ostream	&operator << (std::ostream &os, const Fixed &rhs) {return (os << rhs.toFloat());}
