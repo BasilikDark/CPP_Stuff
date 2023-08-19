@@ -6,7 +6,7 @@
 /*   By: rrupp <rrupp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/05 15:13:48 by rrupp             #+#    #+#             */
-/*   Updated: 2023/08/16 10:17:41 by rrupp            ###   ########.fr       */
+/*   Updated: 2023/08/17 12:55:24 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <iostream>
 # include <exception>
+# include "AForm.hpp"
 
 class Bureaucrat
 {
@@ -33,6 +34,10 @@ class Bureaucrat
 		int				getGrade(void) const;
 		void			incrementGrade(void);
 		void			decrementGrade(void);
+
+		/*Memberfunctions*/
+		void	signAForm(AForm &src) const;
+		void	executeForm(const AForm &form) const;
 
 	private:
 		/*Variables*/

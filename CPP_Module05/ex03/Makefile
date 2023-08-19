@@ -6,7 +6,7 @@
 #    By: rrupp <rrupp@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/19 12:02:21 by rrupp             #+#    #+#              #
-#    Updated: 2023/08/16 14:25:54 by rrupp            ###   ########.fr        #
+#    Updated: 2023/08/18 11:50:20 by rrupp            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,9 +18,13 @@ CC := c++
 
 OBJ_P := ./obj/
 
-SRC :=	main.cpp		\
-		Bureaucrat.cpp	\
-		Form.cpp
+SRC :=	main.cpp					\
+		Bureaucrat.cpp				\
+		ShrubberyCreationForm.cpp	\
+		RobotomyRequestForm.cpp		\
+		PresidentialPardonForm.cpp	\
+		AForm.cpp					\
+		Intern.cpp
 
 OBJ := $(SRC:%.cpp=$(OBJ_P)%.o)
 

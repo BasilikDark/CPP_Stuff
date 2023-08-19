@@ -6,7 +6,7 @@
 /*   By: rrupp <rrupp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 10:52:13 by rrupp             #+#    #+#             */
-/*   Updated: 2023/08/16 11:24:02 by rrupp            ###   ########.fr       */
+/*   Updated: 2023/08/17 13:55:33 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,13 +56,23 @@ void	Bureaucrat::decrementGrade(void) {
 }
 
 /*Memberfunctions*/
-void	Bureaucrat::signForm(Form &src) const {
+void	Bureaucrat::signAForm(AForm &src) const {
 	try {
 		src.beSigned(*this);
 		std::cout << this->_name << " signed " << src.getName() << std::endl;
 	}
 	catch (std::exception &e) {
 		std::cout << this->_name << " coudn't sign " << src.getName() << " because " << e.what() << std::endl;
+	}
+}
+
+void	Bureaucrat::executeForm(const AForm &form) const {
+	try {
+		form.execute(*this);
+		std::cout << this->_name << " executed " << form.getName() << std::endl;
+	}
+	catch (std::exception &e) {
+		std::cout << this->_name << " coudn't execute " << form.getName() << " because " << e.what() << std::endl;
 	}
 }
 

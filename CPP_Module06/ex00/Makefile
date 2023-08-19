@@ -6,11 +6,11 @@
 #    By: rrupp <rrupp@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/19 12:02:21 by rrupp             #+#    #+#              #
-#    Updated: 2023/08/16 14:25:54 by rrupp            ###   ########.fr        #
+#    Updated: 2023/08/18 14:32:25 by rrupp            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME := Bureaucrats
+NAME := ScalarShit
 
 CFLAGS := -Wall -Werror -Wextra -std=c++98
 
@@ -18,9 +18,7 @@ CC := c++
 
 OBJ_P := ./obj/
 
-SRC :=	main.cpp		\
-		Bureaucrat.cpp	\
-		Form.cpp
+SRC :=	main.cpp
 
 OBJ := $(SRC:%.cpp=$(OBJ_P)%.o)
 

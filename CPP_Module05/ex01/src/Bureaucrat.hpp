@@ -6,7 +6,7 @@
 /*   By: rrupp <rrupp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/05 15:13:48 by rrupp             #+#    #+#             */
-/*   Updated: 2023/08/15 14:13:16 by rrupp            ###   ########.fr       */
+/*   Updated: 2023/08/16 11:22:24 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <iostream>
 # include <exception>
+# include "Form.hpp"
 
 class Bureaucrat
 {
@@ -34,9 +35,9 @@ class Bureaucrat
 		void			incrementGrade(void);
 		void			decrementGrade(void);
 
-		/*Static Memberfunctions*/
-		static void		GradeTooHighException(void);
-		static void		GradeTooLowException(void);
+		/*Memberfunctions*/
+		void	signForm(Form &src) const;
+
 	private:
 		/*Variables*/
 		std::string		_name;
