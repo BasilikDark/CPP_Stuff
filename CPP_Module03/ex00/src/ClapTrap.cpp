@@ -6,7 +6,7 @@
 /*   By: rrupp <rrupp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 15:01:08 by rrupp             #+#    #+#             */
-/*   Updated: 2023/08/12 10:40:51 by rrupp            ###   ########.fr       */
+/*   Updated: 2023/08/22 09:49:50 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,11 @@ void	ClapTrap::takeDamage(unsigned int amount) {
 		std::cout << "ClapTrap " << this->_name << " is already dead!";
 		return ;
 	}
-	this->_hitPoints = this->_hitPoints - amount;
+	if ((int)(this->_hitPoints - amount) <= this->_hitPoints)
+		this->_hitPoints = this->_hitPoints - amount;
+	else{
+		std::cout << "Int Overflow!" << std::endl;
+	}
 	if (this->_hitPoints < 0)
 		this->_hitPoints = 0;
 	if (this->_hitPoints > 0) {
@@ -79,14 +83,17 @@ void	ClapTrap::takeDamage(unsigned int amount) {
 }
 
 void	ClapTrap::beRepaired(unsigned int amount) {
-	if (this->_energyPoints && this->_hitPoints) {
+	if (this->_energyPoints && this->_hitPoints && (int)(this->_hitPoints + amount) >= this->_hitPoints) {
 		this->_energyPoints--;
-		this->_hitPoints = this->_hitPoints + amount;
+		this->_hitPoints += amount;
 		std::cout << "ClapTrap " << this->_name << " repaired for ";
 		std::cout << amount << " points!" << std::endl;
 	}
 	else if (this->_energyPoints == 0)
 		std::cout << "ClapTrap " << this->_name << " is out of energy!" << std::endl;
-	else
+	else if (this->_hitPoints == 0)
 		std::cout << "ClapTrap " << this->_name << " is dead!" << std::endl;
+	else
+		std::cout << "Int Overflow!" << std::endl;
 }
+
