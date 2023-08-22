@@ -6,7 +6,7 @@
 /*   By: rrupp <rrupp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 10:37:42 by rrupp             #+#    #+#             */
-/*   Updated: 2023/08/12 12:06:52 by rrupp            ###   ########.fr       */
+/*   Updated: 2023/08/22 13:08:57 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,9 @@ class	ScavTrap : public ClapTrap
 		/*Operator Overload's*/
 		const ScavTrap	&operator = (const ScavTrap &rhs);
 
-		/*memberfunctions*/	
-		void			guardGate(void);
+		/*memberfunctions*/
+		void		attack(const std::string &target);
+		void		guardGate(void);
 	private:
 };
 

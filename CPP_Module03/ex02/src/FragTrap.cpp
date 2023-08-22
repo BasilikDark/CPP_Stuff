@@ -6,15 +6,14 @@
 /*   By: rrupp <rrupp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 11:25:20 by rrupp             #+#    #+#             */
-/*   Updated: 2023/08/12 11:59:51 by rrupp            ###   ########.fr       */
+/*   Updated: 2023/08/22 13:24:58 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "FragTrap.hpp"
 
 /*Con- and Destructor's*/
-FragTrap::FragTrap(const std::string name) {
-	this->_name = name;
+FragTrap::FragTrap(const std::string name) : ClapTrap(name) {
 	this->_hitPoints = 100;
 	this->_energyPoints = 100;
 	this->_attackDamage = 30;

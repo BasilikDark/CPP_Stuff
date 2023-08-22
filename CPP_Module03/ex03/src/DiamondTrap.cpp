@@ -6,26 +6,25 @@
 /*   By: rrupp <rrupp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 11:50:19 by rrupp             #+#    #+#             */
-/*   Updated: 2023/08/22 10:07:05 by rrupp            ###   ########.fr       */
+/*   Updated: 2023/08/22 13:48:50 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
 
 /*Con- and Destructor's*/
-DiamondTrap::DiamondTrap(std::string name) {
+DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"), ScavTrap(name + "_clap_name"), FragTrap(name + "_clap_name") {
 	this->_name = name;
-	ClapTrap::_name = name + "_clap_name";
 	FragTrap::_hitPoints = 100;
 	ScavTrap::_energyPoints = 50;
 	FragTrap::_attackDamage = 30;
-	std::cout << this->_name << " " << ClapTrap::_name << " got constructed!" << std::endl;
+	std::cout << "DiamondTrap " << this->_name << " " << ClapTrap::_name << " got constructed!" << std::endl;
 }
 
 DiamondTrap::DiamondTrap(const DiamondTrap &src) : ClapTrap(src.ClapTrap::_name) {*this = src;}
 
 DiamondTrap::~DiamondTrap() {
-	std::cout << this->_name << " " << ClapTrap::_name << " got destructed!" << std::endl;
+	std::cout << "DiamondTrap " << this->_name << " " << ClapTrap::_name << " got destructed!" << std::endl;
 }
 
 /*Operator Overload's*/
