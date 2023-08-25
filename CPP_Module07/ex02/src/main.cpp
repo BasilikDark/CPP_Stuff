@@ -6,12 +6,14 @@
 /*   By: rrupp <rrupp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 14:25:43 by rrupp             #+#    #+#             */
-/*   Updated: 2023/08/24 14:25:54 by rrupp            ###   ########.fr       */
+/*   Updated: 2023/08/25 10:14:16 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <Array.hpp>
+#include <ctime>
+#include <cstdlib>
+#include "Array.hpp"
 
 #define MAX_VAL 750
 int main(int, char**)
@@ -60,6 +62,8 @@ int main(int, char**)
     {
         numbers[i] = rand();
     }
+	for (int i = 0; i < 10; i++)
+		std::cout << numbers[i] << std::endl;
     delete [] mirror;//                                                                                  
     return 0;
 }
