@@ -1,27 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   easyfind.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rrupp <rrupp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/25 14:26:33 by rrupp             #+#    #+#             */
-/*   Updated: 2023/08/29 13:32:51 by rrupp            ###   ########.fr       */
+/*   Created: 2023/08/30 16:03:14 by rrupp             #+#    #+#             */
+/*   Updated: 2023/08/30 16:49:41 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef EASYFIND_HPP
-# define EASYFIND_HPP
+#include "Span.hpp"
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
 
-# include <algorithm>
-# include <iterator>
-# include <exception>
-# include <iostream>
-
-template <typename T>
-typename T::iterator	easyfind(T &container, int toFind) {
-	typename T::iterator it = std::find(container.begin(), container.end(), toFind);
-	return (it == container.end() ? throw std::runtime_error("easyfind::not contained") : it);
+int	main(void) {
+	
+	Span	blub(3);
+	try {
+		blub.addNumber(-10);
+		blub.addNumber(10);
+		blub.addNumber(9);
+		std::cout << blub.shortestSpan() << std::endl;
+		std::cout << blub.longestSpan() << std::endl;
+	}
+	catch (std::exception &e){
+		std::cout << e.what() << std::endl;
+	}
+	return (0);
 }
-
-#endif

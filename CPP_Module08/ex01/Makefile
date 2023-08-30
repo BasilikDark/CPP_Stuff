@@ -6,11 +6,11 @@
 #    By: rrupp <rrupp@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/19 12:02:21 by rrupp             #+#    #+#              #
-#    Updated: 2023/08/29 13:33:42 by rrupp            ###   ########.fr        #
+#    Updated: 2023/08/30 16:06:14 by rrupp            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME := find
+NAME := Span
 
 CFLAGS := -Wall -Werror -Wextra -std=c++98
 
