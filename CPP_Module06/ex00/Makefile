@@ -6,7 +6,7 @@
 #    By: rrupp <rrupp@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/19 12:02:21 by rrupp             #+#    #+#              #
-#    Updated: 2023/08/18 14:32:25 by rrupp            ###   ########.fr        #
+#    Updated: 2023/08/31 10:07:25 by rrupp            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,8 @@ CC := c++
 
 OBJ_P := ./obj/
 
-SRC :=	main.cpp
+SRC :=	main.cpp	\
+		ScalarConverter.cpp
 
 OBJ := $(SRC:%.cpp=$(OBJ_P)%.o)
 
