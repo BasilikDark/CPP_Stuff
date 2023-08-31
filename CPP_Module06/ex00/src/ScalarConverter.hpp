@@ -6,7 +6,7 @@
 /*   By: rrupp <rrupp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/18 13:53:24 by rrupp             #+#    #+#             */
-/*   Updated: 2023/08/31 10:06:37 by rrupp            ###   ########.fr       */
+/*   Updated: 2023/08/31 13:10:58 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,15 @@
 # include <cstdlib>
 # include <limits>
 # include <math.h>
+# include <cstring>
 
 class ScalarConverter
 {
 	public:
+		/*static Memberfunctions*/
+		static void	convert(std::string toConvert);		
+	
+	private:
 		/*Con- and Desuctor's*/
 		ScalarConverter();
 		ScalarConverter(const ScalarConverter &src);
@@ -28,10 +33,6 @@ class ScalarConverter
 
 		/*Operator Overload's*/
 		ScalarConverter	&operator = (const ScalarConverter &rhs);
-		
-		/*static Memberfunctions*/
-		static void	convert(std::string toConvert);		
-	private:
 };
 
 

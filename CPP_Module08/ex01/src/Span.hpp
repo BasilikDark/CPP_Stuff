@@ -6,7 +6,7 @@
 /*   By: rrupp <rrupp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/29 14:11:58 by rrupp             #+#    #+#             */
-/*   Updated: 2023/08/30 16:49:31 by rrupp            ###   ########.fr       */
+/*   Updated: 2023/08/31 10:48:52 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ class Span
 		/*Memberfunctions*/
 		void			addNumber(int nbr);
 		template <typename T>
-		void			addManyNumber(typename T::iterator first, typename T::iteator last) {
+		void			addManyNumber(typename T::iterator &first, typename T::iterator &last) {
 			for (typename T::iterator it = first; first < last; it++)
 				addNumber(*it);
 		}

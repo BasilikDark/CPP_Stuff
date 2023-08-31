@@ -6,7 +6,7 @@
 /*   By: rrupp <rrupp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 14:17:18 by rrupp             #+#    #+#             */
-/*   Updated: 2023/08/22 15:22:03 by rrupp            ###   ########.fr       */
+/*   Updated: 2023/08/31 11:57:26 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,17 +20,19 @@
 class Serialization
 {
 	public:
+		/*static Memberfunctions*/
+		static uintptr_t	serialize(Data *ptr);
+		static Data			*deserialize(uintptr_t raw);
+	
+	private:
 		/*Con- and Destructor's*/
 		Serialization();
 		Serialization(const Serialization &src);
-		~Serialization();
+		virtual ~Serialization() = 0;
 
 		/*Operator Overload's*/
 		Serialization &operator = (const Serialization &rhs);
 		
-		static uintptr_t	serialize(Data *ptr);
-		static Data			*deserialize(uintptr_t raw);
-	private:
 };
 
 

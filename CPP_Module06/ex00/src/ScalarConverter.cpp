@@ -6,7 +6,7 @@
 /*   By: rrupp <rrupp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 10:02:57 by rrupp             #+#    #+#             */
-/*   Updated: 2023/08/31 10:06:06 by rrupp            ###   ########.fr       */
+/*   Updated: 2023/08/31 13:32:31 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,11 +62,29 @@ static void	printShit(double value, int precision) {
 	std::cout << value << std::endl;
 }
 
+void	input_check(std::string toConvert, double value) {
+	int	check_input = 0;
+	if (toConvert.size() <= 1)
+		return ;
+	if (toConvert[0] == '+' || toConvert[0] == '-')
+		check_input++;
+	while (std::isdigit(toConvert[check_input]))
+		check_input++;
+	if (toConvert[check_input])
+		throw std::runtime_error("This is not a valid Input");
+	std::string	toCheck = std::to_string(value);
+	if (!std::memcmp(toConvert.c_str(), toCheck.c_str(), toCheck.find_first_of('.')) || !memcmp(toConvert.c_str(), toCheck.c_str(), toConvert.length()))
+		return ;
+	throw std::runtime_error("This is not a valid Input");
+}
+
 /*static Memberfunction's*/
 void	ScalarConverter::convert(std::string toConvert) {
 	double	value;
 	int		precision;
+	std::cout << std::numeric_limits<float>::max() << std::endl;
 	value = strtod(toConvert.c_str(), NULL);
+	input_check(toConvert, value);
 	if (value == 0 && toConvert[0] != '0')
 		value = toConvert[0];
 	precision = countAfterComma(toConvert);

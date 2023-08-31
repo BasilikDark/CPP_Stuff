@@ -6,13 +6,13 @@
 #    By: rrupp <rrupp@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/19 12:02:21 by rrupp             #+#    #+#              #
-#    Updated: 2023/08/31 10:07:25 by rrupp            ###   ########.fr        #
+#    Updated: 2023/08/31 13:17:48 by rrupp            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME := ScalarShit
 
-CFLAGS := -Wall -Werror -Wextra -std=c++98
+CFLAGS := -Wall -Werror -Wextra #-std=c++98
 
 CC := c++
 
