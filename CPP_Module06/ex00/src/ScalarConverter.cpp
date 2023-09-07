@@ -6,7 +6,7 @@
 /*   By: rrupp <rrupp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 10:02:57 by rrupp             #+#    #+#             */
-/*   Updated: 2023/08/31 13:32:31 by rrupp            ###   ########.fr       */
+/*   Updated: 2023/09/07 14:09:08 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ static void	printShit(double value, int precision) {
 	else
 		std::cout << "impossible" << std::endl;
 	std::cout << "float: ";
-	if ((value <= std::numeric_limits<float>::max() && value >= (std::numeric_limits<float>::max() * -1 - 1)) || !std::isfinite(value))
+	if ((value <= std::numeric_limits<float>::max() && value >= (std::numeric_limits<float>::max() * -1 - 1)) || !std::isfinite(static_cast<float> (value)))
 		std::cout << static_cast <float> (value) << "f" << std::endl;
 	else
 		std::cout << "impossible" << std::endl;
@@ -62,29 +62,31 @@ static void	printShit(double value, int precision) {
 	std::cout << value << std::endl;
 }
 
-void	input_check(std::string toConvert, double value) {
+void	input_check(std::string toConvert) {
 	int	check_input = 0;
+	int dot_count = 0;
+	
 	if (toConvert.size() <= 1)
 		return ;
 	if (toConvert[0] == '+' || toConvert[0] == '-')
 		check_input++;
-	while (std::isdigit(toConvert[check_input]))
+	while (std::isdigit(toConvert[check_input]) || toConvert[check_input] == '.') {
+		if (toConvert[check_input] == '.')
+			dot_count++;
 		check_input++;
+	}
+	if (dot_count > 1)
+		throw std::runtime_error("This is not a valid Input");
 	if (toConvert[check_input])
 		throw std::runtime_error("This is not a valid Input");
-	std::string	toCheck = std::to_string(value);
-	if (!std::memcmp(toConvert.c_str(), toCheck.c_str(), toCheck.find_first_of('.')) || !memcmp(toConvert.c_str(), toCheck.c_str(), toConvert.length()))
-		return ;
-	throw std::runtime_error("This is not a valid Input");
 }
 
 /*static Memberfunction's*/
 void	ScalarConverter::convert(std::string toConvert) {
 	double	value;
 	int		precision;
-	std::cout << std::numeric_limits<float>::max() << std::endl;
 	value = strtod(toConvert.c_str(), NULL);
-	input_check(toConvert, value);
+	input_check(toConvert);
 	if (value == 0 && toConvert[0] != '0')
 		value = toConvert[0];
 	precision = countAfterComma(toConvert);

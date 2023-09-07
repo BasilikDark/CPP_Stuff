@@ -6,11 +6,11 @@
 #    By: rrupp <rrupp@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/19 12:02:21 by rrupp             #+#    #+#              #
-#    Updated: 2023/09/07 10:13:24 by rrupp            ###   ########.fr        #
+#    Updated: 2023/09/06 17:00:38 by rrupp            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME := Span
+NAME := MutantStack
 
 CFLAGS := -Wall -Werror -Wextra -std=c++98
 
@@ -18,8 +18,7 @@ CC := c++
 
 OBJ_P := ./obj/
 
-SRC :=	main.cpp\
-		Span.cpp
+SRC :=	main.cpp
 
 OBJ := $(SRC:%.cpp=$(OBJ_P)%.o)
 

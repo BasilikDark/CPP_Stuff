@@ -3,14 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: rrupp <rrupp@student.42.fr>                +#+  +:+       +#+         #
+#    By: rrupp <rrupp@student.42vienna.com>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/19 12:02:21 by rrupp             #+#    #+#              #
-#    Updated: 2023/09/07 10:13:24 by rrupp            ###   ########.fr        #
+#    Updated: 2023/06/06 11:47:01 by rrupp            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME := Span
+NAME := #progam name
 
 CFLAGS := -Wall -Werror -Wextra -std=c++98
 
@@ -18,8 +18,7 @@ CC := c++
 
 OBJ_P := ./obj/
 
-SRC :=	main.cpp\
-		Span.cpp
+SRC :=	# programs with a \ until the one befor the last
 
 OBJ := $(SRC:%.cpp=$(OBJ_P)%.o)
 

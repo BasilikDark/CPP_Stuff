@@ -5,22 +5,35 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rrupp <rrupp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/18 14:24:08 by rrupp             #+#    #+#             */
-/*   Updated: 2023/09/07 13:36:29 by rrupp            ###   ########.fr       */
+/*   Created: 2023/09/06 16:58:16 by rrupp             #+#    #+#             */
+/*   Updated: 2023/09/06 17:28:37 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
+#include "MutantStack.hpp"
+#include <iostream>
 
-int	main(int argc, char *argv[]) {
-	try {
-	if (argc == 2)
-		ScalarConverter::convert(argv[1]);
-	else
-		std::cout << "Wrong number of args!" << std::endl;
-	return (0);
+int	main() {
+	MutantStack<int> mstack;
+	mstack.push(5);
+	mstack.push(17);
+	std::cout << mstack.top() << std::endl;
+	mstack.pop();
+	std::cout << mstack.size() << std::endl;
+	mstack.push(3);
+	mstack.push(5);
+	mstack.push(737);
+	//[...]
+	mstack.push(0);
+	MutantStack<int>::iterator it = mstack.begin();
+	MutantStack<int>::iterator ite = mstack.end();
+	++it;
+	--it;
+	while (it != ite)
+	{
+		std::cout << *it << std::endl;
+		++it;
 	}
-	catch (std::exception &e) {
-		std::cout << e.what() << std::endl;
-	}
+	std::stack<int> s(mstack);
+	return 0;
 }
