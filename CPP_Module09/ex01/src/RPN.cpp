@@ -6,7 +6,7 @@
 /*   By: rrupp <rrupp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 15:56:54 by rrupp             #+#    #+#             */
-/*   Updated: 2023/09/15 17:08:39 by rrupp            ###   ########.fr       */
+/*   Updated: 2023/09/15 17:57:02 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ void	RPN::PushToStack(const int number) {
 void	RPN::popCal(std::string operation) {
 	if (numbersToCalculate.size() < 2)
 		throw cal;
-	int	a = numbersToCalculate.top();
+	int	b = numbersToCalculate.top();
 	numbersToCalculate.pop();
-	int b = numbersToCalculate.top();
+	int a = numbersToCalculate.top();
 	numbersToCalculate.pop();
 	
 	if (operation == "+")

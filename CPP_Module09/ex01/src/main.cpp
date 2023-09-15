@@ -6,7 +6,7 @@
 /*   By: rrupp <rrupp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 15:57:27 by rrupp             #+#    #+#             */
-/*   Updated: 2023/09/15 17:26:30 by rrupp            ###   ########.fr       */
+/*   Updated: 2023/09/15 17:54:00 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,10 @@ int main(int argc, char **argv) {
 			while (input[index] == ' ')
 				index++;
 			value = input.substr(index, input.find(' ', index) - index);
-			std::cout << index << std::endl;
 			if (value == "*" || value == "/" || value == "+" || value == "-")
 				calculate.popCal(value);
 			else {
-				std::cout << "      " << &value[index] << std::endl;
-				number = strtol(&value[index], &check, 10);
+				number = strtol(value.c_str(), &check, 10);
 				if (*check != '\0' && *check != ' ') {
 					std::cout << "Error: invalid input!" << check << std::endl;
 					return (0);
