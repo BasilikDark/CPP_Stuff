@@ -6,7 +6,7 @@
 /*   By: rrupp <rrupp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 11:48:45 by rrupp             #+#    #+#             */
-/*   Updated: 2023/09/13 17:39:13 by rrupp            ###   ########.fr       */
+/*   Updated: 2023/09/15 13:37:12 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,9 @@ int main(int argc, char **argv) {
 		return (0);
 	}
 	try{
+		(void)argv;
 		BitcoinExchange blub;
-		blub.exchange(argv[1]);
+		argv[1]	? blub.exchange(argv[1]) : blub.exchange("");
 	}
 	catch (std::exception &e) {
 		std::cout << e.what() << std::endl;
