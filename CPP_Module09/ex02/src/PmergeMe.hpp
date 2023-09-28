@@ -6,7 +6,7 @@
 /*   By: rrupp <rrupp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 10:06:44 by rrupp             #+#    #+#             */
-/*   Updated: 2023/09/27 17:59:53 by rrupp            ###   ########.fr       */
+/*   Updated: 2023/09/28 10:18:37 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@
 /*Non Memberfunctions*/
 template<class Container>
 void	FordJohnsonSort(Container con, typename Container::iterator l, typename Container::iterator r) {
+	if (con.size() <= 1)
+		return ;
 	if (r == con.end())
 		r--;
 	if (std::distance(l, r) > CHUNK) {
@@ -31,8 +33,9 @@ void	FordJohnsonSort(Container con, typename Container::iterator l, typename Con
 		FordJohnsonSort(con, l, m);
 		FordJohnsonSort(con, m + 1, r);
 	}
-	while(l < r) {
-		std::rotate(std::upper_bound(l, l, *l), l, l + 1);
+	typename Container::iterator	start = l;
+	while(l <= r) {
+		std::rotate(std::upper_bound(start, l, *l), l, l + 1);
 		l++;
 	}
 }
@@ -65,17 +68,17 @@ class PmergeMe{
 			start = clock();
 			FordJohnsonSort(this->conOne, conOne.begin(), conOne.end() - 1);
 			end = clock();
-			std::cout << "The first given Container took " << double(end - start) / double(CLOCKS_PER_SEC) << " seconds!";
-			for (typename ContainerOne::iterator it = conOne.begin(); it != conOne.end(); it++) //int i = 0; input[i]; i++)
-				std::cout << *it << " ";
-			std::cout << std::endl;
+			std::cout << "The first given Container took " << std::fixed << double(end - start) / double(CLOCKS_PER_SEC) << " seconds!" << std::endl;
+			// for (typename ContainerOne::iterator it = conOne.begin(); it != conOne.end(); it++) //int i = 0; input[i]; i++)
+			// 	std::cout << *it << " ";
+			// std::cout << std::endl;
 			start = clock();
 			FordJohnsonSort(this->conTwo, conTwo.begin(), conTwo.end() - 1);
 			end = clock();
-			std::cout << "The second given Container took " << double(end - start) / double(CLOCKS_PER_SEC) << " seconds!";
-			for (typename ContainerTwo::iterator it = conTwo.begin(); it != conTwo.end(); it++) //int i = 0; input[i]; i++)
-				std::cout << *it << " ";
-			std::cout << std::endl;
+			std::cout << "The second given Container took " << std::fixed << double(end - start) / double(CLOCKS_PER_SEC) << " seconds!" << std::endl;
+			// for (typename ContainerTwo::iterator it = conTwo.begin(); it != conTwo.end(); it++) //int i = 0; input[i]; i++)
+			// 	std::cout << *it << " ";
+			// std::cout << std::endl;
 		};
 	private:
 		/*private Memberfuntion's*/
