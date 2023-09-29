@@ -6,7 +6,7 @@
 /*   By: rrupp <rrupp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 12:07:42 by rrupp             #+#    #+#             */
-/*   Updated: 2023/09/15 15:22:58 by rrupp            ###   ########.fr       */
+/*   Updated: 2023/09/29 17:08:40 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,6 +95,7 @@ time_t	BitcoinExchange::checkLine(std::string line, char delim) {
 	if (checkRest.size() < 1 || checkRest.find_first_of("0123456789") == std::string::npos \
 		|| checkRest.find_first_not_of(",.-| 0123456789\n") != std::string::npos)
 		throw syntax;
+	/*Somehow this does not work!!!!*/
 	time_t		timeT;
 	start->tm_year = strtol(line.c_str(), NULL, 10) - 1900;
 	start->tm_mon = strtol(&line.c_str()[5], NULL, 10) - 1;

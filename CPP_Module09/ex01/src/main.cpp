@@ -6,12 +6,14 @@
 /*   By: rrupp <rrupp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 15:57:27 by rrupp             #+#    #+#             */
-/*   Updated: 2023/09/15 17:54:00 by rrupp            ###   ########.fr       */
+/*   Updated: 2023/09/29 17:09:07 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RPN.hpp"
 #include <cstdlib>
+
+/*the blub test does not work .-*/
 
 int main(int argc, char **argv) {
 	if (argc != 2) {
@@ -39,7 +41,6 @@ int main(int argc, char **argv) {
 					std::cout << "Error: invalid input!" << check << std::endl;
 					return (0);
 				}
-				std::cout << " blub " << number << std::endl;
 				calculate.PushToStack(number);
 			}
 			while (input[index] && input[index] != ' ')
