@@ -6,7 +6,7 @@
 /*   By: rrupp <rrupp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 10:06:44 by rrupp             #+#    #+#             */
-/*   Updated: 2023/09/28 10:18:37 by rrupp            ###   ########.fr       */
+/*   Updated: 2023/10/03 14:48:10 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,11 +44,10 @@ template<class ContainerOne, class ContainerTwo>
 class PmergeMe{
 	public:
 		/*Con- & Destructor's*/
-		PmergeMe(std::vector<int> input){
+		PmergeMe(std::vector<int> input) {
 			conCheck = input;
-			saveInput();
 			std::cout << "befor sort: ";
-			for (std::vector<int>::iterator it = input.begin(); it != input.end(); it++) //int i = 0; input[i]; i++)
+			for (std::vector<int>::iterator it = input.begin(); it != input.end(); it++)
 				std::cout << *it << " ";
 			std::cout << std::endl << "after sort: ";
 			std::sort(input.begin(), input.end());
@@ -66,6 +65,8 @@ class PmergeMe{
 		void	FordJohnsonSorts() {
 			clock_t start, end;
 			start = clock();
+			for (std::vector<int>::iterator it = conCheck.begin(); it != conCheck.end(); it++)
+				conOne.push_back(*it);
 			FordJohnsonSort(this->conOne, conOne.begin(), conOne.end() - 1);
 			end = clock();
 			std::cout << "The first given Container took " << std::fixed << double(end - start) / double(CLOCKS_PER_SEC) << " seconds!" << std::endl;
@@ -73,6 +74,8 @@ class PmergeMe{
 			// 	std::cout << *it << " ";
 			// std::cout << std::endl;
 			start = clock();
+			for (std::vector<int>::iterator it = conCheck.begin(); it != conCheck.end(); it++)
+				conTwo.push_back(*it);
 			FordJohnsonSort(this->conTwo, conTwo.begin(), conTwo.end() - 1);
 			end = clock();
 			std::cout << "The second given Container took " << std::fixed << double(end - start) / double(CLOCKS_PER_SEC) << " seconds!" << std::endl;
@@ -81,14 +84,6 @@ class PmergeMe{
 			// std::cout << std::endl;
 		};
 	private:
-		/*private Memberfuntion's*/
-		void	saveInput() {
-			for (std::vector<int>::iterator it = conCheck.begin(); it != conCheck.end(); it++) {
-				conOne.push_back(*it);
-				conTwo.push_back(*it);
-			}
-		};
-		
 		/*private Variables*/
 		ContainerOne		conOne;
 		ContainerTwo		conTwo;

@@ -6,7 +6,7 @@
 /*   By: rrupp <rrupp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 12:07:42 by rrupp             #+#    #+#             */
-/*   Updated: 2023/10/03 10:54:51 by rrupp            ###   ########.fr       */
+/*   Updated: 2023/10/03 15:11:10 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,12 @@ BitcoinExchange::BitcoinExchange() : data_file("data.csv") {
 	time_t	timeT;
 	time(&timeT);
 	start = localtime(&timeT);
-	data_file.empty() ? throw file : checkFile(data_file);
+	try {
+		if (data_file.empty())
+			throw file;
+		checkFile(data_file);
+	}
+	catch (std::exception &e) {throw std::runtime_error("datafile");}
 }
 
 BitcoinExchange::BitcoinExchange(const BitcoinExchange &src) {*this = src;}
