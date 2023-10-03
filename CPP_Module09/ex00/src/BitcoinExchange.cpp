@@ -6,7 +6,7 @@
 /*   By: rrupp <rrupp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 12:07:42 by rrupp             #+#    #+#             */
-/*   Updated: 2023/09/29 17:08:40 by rrupp            ###   ########.fr       */
+/*   Updated: 2023/10/03 10:54:51 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,12 @@ void	BitcoinExchange::checkFile(std::string file) {
 	input.close();
 }
 
+static void	fill_tm_struct(std::string line, struct tm **start) {
+	(*start)->tm_year = strtol(line.c_str(), NULL, 10) - 1900;
+	(*start)->tm_mon = strtol(&line.c_str()[5], NULL, 10) - 1;
+	(*start)->tm_mday = strtol(&line.c_str()[8], NULL, 10);
+}
+
 time_t	BitcoinExchange::checkLine(std::string line, char delim) {
 	int			checkForMinus = 0;
 	std::size_t found = line.find(delim);
@@ -97,11 +103,10 @@ time_t	BitcoinExchange::checkLine(std::string line, char delim) {
 		throw syntax;
 	/*Somehow this does not work!!!!*/
 	time_t		timeT;
-	start->tm_year = strtol(line.c_str(), NULL, 10) - 1900;
-	start->tm_mon = strtol(&line.c_str()[5], NULL, 10) - 1;
-	start->tm_mday = strtol(&line.c_str()[8], NULL, 10);
+	fill_tm_struct(line, &start);
+	fill_tm_struct(line, &check);
 	timeT = mktime(start);
-	if(timeT == -1)
+	if (start->tm_year != check->tm_year || start->tm_mon != check->tm_mon || start->tm_mday != check->tm_mday)
 		throw date;
 	return (timeT);
 }

@@ -6,13 +6,13 @@
 #    By: rrupp <rrupp@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/19 12:02:21 by rrupp             #+#    #+#              #
-#    Updated: 2023/09/13 12:30:37 by rrupp            ###   ########.fr        #
+#    Updated: 2023/10/03 09:38:22 by rrupp            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME := btc
 
-CFLAGS := -Wall -Werror -Wextra -std=c++98
+CFLAGS := -Wall -Werror -Wextra -std=c++98 -gdwarf-4
 
 CC := c++
 

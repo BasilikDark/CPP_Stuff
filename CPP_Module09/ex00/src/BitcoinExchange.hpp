@@ -6,7 +6,7 @@
 /*   By: rrupp <rrupp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 10:58:48 by rrupp             #+#    #+#             */
-/*   Updated: 2023/09/15 13:37:21 by rrupp            ###   ########.fr       */
+/*   Updated: 2023/10/03 10:49:39 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ class BitcoinExchange
 		std::map<time_t, double>	coinMap;
 		std::string					data_file;
 		struct tm					*start;
+		struct tm					*check;
 
 		/*Exception's*/
 		class SyntaxException : public std::exception {
