@@ -6,14 +6,12 @@
 /*   By: rrupp <rrupp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 15:57:27 by rrupp             #+#    #+#             */
-/*   Updated: 2023/09/29 17:09:07 by rrupp            ###   ########.fr       */
+/*   Updated: 2023/10/03 09:33:44 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RPN.hpp"
 #include <cstdlib>
-
-/*the blub test does not work .-*/
 
 int main(int argc, char **argv) {
 	if (argc != 2) {
@@ -30,8 +28,6 @@ int main(int argc, char **argv) {
 
 	try{
 		while (input[index]) {
-			while (input[index] == ' ')
-				index++;
 			value = input.substr(index, input.find(' ', index) - index);
 			if (value == "*" || value == "/" || value == "+" || value == "-")
 				calculate.popCal(value);
@@ -44,6 +40,8 @@ int main(int argc, char **argv) {
 				calculate.PushToStack(number);
 			}
 			while (input[index] && input[index] != ' ')
+				index++;
+			while (input[index] == ' ')
 				index++;
 		}
 		calculate.result();
