@@ -6,7 +6,7 @@
 /*   By: rrupp <rrupp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 12:07:42 by rrupp             #+#    #+#             */
-/*   Updated: 2023/10/03 15:24:15 by rrupp            ###   ########.fr       */
+/*   Updated: 2023/10/10 12:49:07 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,10 @@ BitcoinExchange::BitcoinExchange() : data_file("data.csv") {
 	time_t	timeT;
 	time(&timeT);
 	start = localtime(&timeT);
-	try {
-		if (data_file.empty())
-			throw file;
-		checkFile(data_file);
-	}
-	catch (std::exception &e) {throw std::runtime_error("datafile");}
+	if (data_file.empty())
+		throw std::runtime_error("datafile");
+	checkFile(data_file);
+	
 }
 
 BitcoinExchange::BitcoinExchange(const BitcoinExchange &src) {*this = src;}
@@ -35,16 +33,19 @@ BitcoinExchange	&BitcoinExchange::operator=(const BitcoinExchange &rhs) {(void)r
 void	BitcoinExchange::exchange(std::string in_file) {
 	std::ifstream	input;
 	std::string		line;
+	int				i = 0;
 
 	if (in_file.empty())
 		throw file;
 	input.open(in_file.c_str());
 	if(!input.is_open())
 		throw file;
-	std::getline(input, line);
-	while (std::getline(input, line))
+	while (std::getline(input, line)) {
+		if (line == "date | value" && i++ == 0)
+			continue ;
 		if (!line.empty())
-			lineExchange(line);
+			lineExchange(line);		
+	}
 	input.close();
 }
 
@@ -75,17 +76,23 @@ void	BitcoinExchange::checkFile(std::string file) {
 
 	input.open(file.c_str());
 	if (!input.is_open())
-		throw file;
-	std::getline(input, line);
+		throw std::runtime_error("datafile");
 	while (std::getline(input, line)) {
+		if (line == "date,exchange_rate")
+			continue ;
 		if (!line.empty()) {
 			coinMap[checkLine(line, ',')] = strtod(&line[11], NULL);
 		}
 	}
+	if (coinMap.size() == 0)
+		throw std::runtime_error("no input!");
 	input.close();
 }
 
 static void	fill_tm_struct(std::string line, struct tm **start) {
+	time_t	blub;
+	time(&blub);
+	*start = localtime(&blub);
 	(*start)->tm_year = strtol(line.c_str(), NULL, 10) - 1900;
 	(*start)->tm_mon = strtol(&line.c_str()[5], NULL, 10) - 1;
 	(*start)->tm_mday = strtol(&line.c_str()[8], NULL, 10);

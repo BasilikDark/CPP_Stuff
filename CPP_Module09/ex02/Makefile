@@ -6,7 +6,7 @@
 #    By: rrupp <rrupp@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/19 12:02:21 by rrupp             #+#    #+#              #
-#    Updated: 2023/09/27 10:06:03 by rrupp            ###   ########.fr        #
+#    Updated: 2023/10/10 09:45:09 by rrupp            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,8 @@ CC := c++
 
 OBJ_P := ./obj/
 
-SRC :=	main.cpp
+SRC :=	main.cpp	\
+		PmergeMe.cpp
 
 OBJ := $(SRC:%.cpp=$(OBJ_P)%.o)
 

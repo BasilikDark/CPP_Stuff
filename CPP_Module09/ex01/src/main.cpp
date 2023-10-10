@@ -6,7 +6,7 @@
 /*   By: rrupp <rrupp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 15:57:27 by rrupp             #+#    #+#             */
-/*   Updated: 2023/10/03 09:33:44 by rrupp            ###   ########.fr       */
+/*   Updated: 2023/10/10 09:47:08 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ int main(int argc, char **argv) {
 
 	try{
 		while (input[index]) {
+			while (input[index] == ' ')
+				index++;
 			value = input.substr(index, input.find(' ', index) - index);
 			if (value == "*" || value == "/" || value == "+" || value == "-")
 				calculate.popCal(value);
