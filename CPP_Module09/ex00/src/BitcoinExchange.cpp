@@ -6,7 +6,7 @@
 /*   By: rrupp <rrupp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 12:07:42 by rrupp             #+#    #+#             */
-/*   Updated: 2023/10/10 12:49:07 by rrupp            ###   ########.fr       */
+/*   Updated: 2023/10/13 15:58:16 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,17 +102,15 @@ time_t	BitcoinExchange::checkLine(std::string line, char delim) {
 	int			checkForMinus = 0;
 	std::size_t found = line.find(delim);
 	
-	if (found == std::string::npos)
-		throw syntax;
+	if (delim == '|' && (line[found - 1] != ' ' || line[found + 1] != ' ')) throw syntax;
+	if (found == std::string::npos) throw syntax;
 	for (std::size_t i = 0; line[i] && i < found; i++)
 		if (line[i] == '-')
 			checkForMinus++;
-	if (checkForMinus != 2)
-		throw syntax;
+	if (checkForMinus != 2) throw syntax;
 	std::string checkRest(&line[found]);
 	if (checkRest.size() < 1 || checkRest.find_first_of("0123456789") == std::string::npos \
-		|| checkRest.find_first_not_of(",.-| 0123456789\n") != std::string::npos)
-		throw syntax;
+		|| checkRest.find_first_not_of(",.-| 0123456789\n") != std::string::npos) throw syntax;
 	time_t		timeT;
 	fill_tm_struct(line, &start);
 	fill_tm_struct(line, &check);
