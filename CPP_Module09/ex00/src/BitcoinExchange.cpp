@@ -6,7 +6,7 @@
 /*   By: rrupp <rrupp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 12:07:42 by rrupp             #+#    #+#             */
-/*   Updated: 2023/10/13 15:58:16 by rrupp            ###   ########.fr       */
+/*   Updated: 2023/10/13 16:11:14 by rrupp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,8 +102,8 @@ time_t	BitcoinExchange::checkLine(std::string line, char delim) {
 	int			checkForMinus = 0;
 	std::size_t found = line.find(delim);
 	
-	if (delim == '|' && (line[found - 1] != ' ' || line[found + 1] != ' ')) throw syntax;
 	if (found == std::string::npos) throw syntax;
+	if (delim == '|' && (line[found - 1] != ' ' || line[found + 1] != ' ')) throw syntax;
 	for (std::size_t i = 0; line[i] && i < found; i++)
 		if (line[i] == '-')
 			checkForMinus++;
